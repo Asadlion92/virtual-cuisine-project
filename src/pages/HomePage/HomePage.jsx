@@ -1,9 +1,12 @@
 import React from 'react'
 import './HomePage.css'
+import HeroSlide from './../../components/HeroSlide/HeroSlide';
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <div className='homepage-container'>
+        <HeroSlide />
+    </div>
   )
 }
 
