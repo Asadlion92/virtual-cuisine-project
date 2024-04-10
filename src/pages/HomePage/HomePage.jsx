@@ -3,6 +3,7 @@ import './HomePage.css'
 import HeroSlide from './../../components/HeroSlide/HeroSlide';
 import OurServices from './../../components/OurServices/OurServices';
 import OurMission from '../../components/OurMission/OurMission';
+import Testimonials from '../../components/Testimonials/Testimonials';
 
 function HomePage() {
   return (
@@ -10,6 +11,7 @@ function HomePage() {
         <HeroSlide />
         <OurServices />
         <OurMission />
+        <Testimonials />
     </div>
   )
 }
