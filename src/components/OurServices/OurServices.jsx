@@ -2,8 +2,10 @@ import React from 'react'
 import './OurServices.css'
 import { LuChefHat } from "react-icons/lu";
 import { PiCookingPot } from "react-icons/pi";
+import { IoIosNutrition } from "react-icons/io";
 import courseIconOne from '../../images/course-icon1.png'
 import courseIconTwo from '../../images/course-icon2.png'
+import courseIconThree from '../../images/course-icon3.png'
 
 function OurServices() {
   return (
@@ -19,7 +21,7 @@ function OurServices() {
                         backgroundSize: 'cover',
                         backgroundImage: `url(${courseIconOne})`,
                         borderRadius: '40px',
-                        filter: 'brightness(50%)'
+                        filter: 'brightness(40%)'
                     }}></div>
                     <div className='top-courses-icon-header'>
                         <h3>Chef Skills</h3>
@@ -34,13 +36,28 @@ function OurServices() {
                         backgroundSize: 'cover',
                         backgroundImage: `url(${courseIconTwo})`,
                         borderRadius: '40px',
-                        filter: 'brightness(50%)'
+                        filter: 'brightness(40%)'
                     }}></div>
                     <div className='top-courses-icon-header'>
                         <h3>Cooking Essentials</h3>
                         <PiCookingPot className='top-courses-img' />
                     </div>
                     <p>Learn the essential skills and techniques that will lead to a lifetime of restaurant-quality cooking.</p>
+                </div>
+                <div className='top-courses-icon'>
+                    <div style={{
+                        width: '348px',
+                        height: '50vh',
+                        backgroundSize: 'cover',
+                        backgroundImage: `url(${courseIconThree})`,
+                        borderRadius: '40px',
+                        filter: 'brightness(40%)'
+                    }}></div>
+                    <div className='top-courses-icon-header'>
+                        <h3>Nutrition in Cooking</h3>
+                        <IoIosNutrition className='top-courses-img' />
+                    </div>
+                    <p>Master cookery and nutrition skills for health and well-being with this 20-week Accredited Online Nutrition Course.</p>
                 </div>
             </div>
         </div>
