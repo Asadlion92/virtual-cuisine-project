@@ -28,6 +28,7 @@ function OurServices() {
                         width: '320px',
                         height: '50vh',
                         backgroundSize: 'cover',
+                        backgroundPosition: 'center',
                         backgroundImage: `url(${courseIconOne})`,
                         borderRadius: '40px',
                         filter: 'brightness(40%)'
@@ -43,6 +44,7 @@ function OurServices() {
                         width: '320px',
                         height: '50vh',
                         backgroundSize: 'cover',
+                        backgroundPosition: 'center',
                         backgroundImage: `url(${courseIconTwo})`,
                         borderRadius: '40px',
                         filter: 'brightness(40%)'
@@ -58,6 +60,7 @@ function OurServices() {
                         width: '320px',
                         height: '50vh',
                         backgroundSize: 'cover',
+                        backgroundPosition: 'center',
                         backgroundImage: `url(${courseIconThree})`,
                         borderRadius: '40px',
                         filter: 'brightness(40%)'
@@ -85,6 +88,7 @@ function OurServices() {
                         width: '320px',
                         height: '50vh',
                         backgroundSize: 'cover',
+                        backgroundPosition: 'center',
                         backgroundImage: `url(${beefImg})`,
                         borderRadius: '40px',
                         filter: 'brightness(50%)'
@@ -96,6 +100,7 @@ function OurServices() {
                         width: '320px',
                         height: '50vh',
                         backgroundSize: 'cover',
+                        backgroundPosition: 'center',
                         backgroundImage: `url(${chickenImg})`,
                         borderRadius: '40px',
                         filter: 'brightness(50%)'
@@ -107,6 +112,7 @@ function OurServices() {
                         width: '320px',
                         height: '50vh',
                         backgroundSize: 'cover',
+                        backgroundPosition: 'center',
                         backgroundImage: `url(${seafoodImg})`,
                         borderRadius: '40px',
                         filter: 'brightness(50%)'

@@ -15,6 +15,7 @@ function HeroSlide() {
         width: '100%',
         height: '100vh',
         backgroundSize: 'cover',
+        backgroundPosition: 'center',
         backgroundImage: `url(${heroImage})`,
         filter: 'brightness(40%)',
       }}></div>
