@@ -6,8 +6,17 @@ import { IoIosNutrition } from "react-icons/io";
 import courseIconOne from '../../images/course-icon1.png'
 import courseIconTwo from '../../images/course-icon2.png'
 import courseIconThree from '../../images/course-icon3.png'
+import beefImg from '../../images/beef.png'
+import chickenImg from '../../images/chicken.png'
+import seafoodImg from '../../images/seafood.png'
+import sound from '../../assets/button-click.wav'
 
 function OurServices() {
+
+    const play = () => {
+        new Audio(sound).play()
+    }
+
   return (
     <div className='services-container'>
         <div className='services-title-banner'>OUR SERVICES</div>
@@ -16,7 +25,7 @@ function OurServices() {
             <div className='top-courses-icons-container'>
                 <div className='top-courses-icon'>
                     <div style={{
-                        width: '348px',
+                        width: '320px',
                         height: '50vh',
                         backgroundSize: 'cover',
                         backgroundImage: `url(${courseIconOne})`,
@@ -31,7 +40,7 @@ function OurServices() {
                 </div>
                 <div className='top-courses-icon'>
                     <div style={{
-                        width: '348px',
+                        width: '320px',
                         height: '50vh',
                         backgroundSize: 'cover',
                         backgroundImage: `url(${courseIconTwo})`,
@@ -46,7 +55,7 @@ function OurServices() {
                 </div>
                 <div className='top-courses-icon'>
                     <div style={{
-                        width: '348px',
+                        width: '320px',
                         height: '50vh',
                         backgroundSize: 'cover',
                         backgroundImage: `url(${courseIconThree})`,
@@ -60,6 +69,58 @@ function OurServices() {
                     <p>Master cookery and nutrition skills for health and well-being with this 20-week Accredited Online Nutrition Course.</p>
                 </div>
             </div>
+            <div className='btn-container'>
+                <button 
+                    className='btn'
+                    onClick={play}
+                    >Learn More</button>
+            </div>
+            
+        </div>
+        <div className='top-recipes-banner'>TOP RECIPES</div>
+        <div className='top-recipes-container'>
+            <div className='top-recipes-icons-container'>
+                <div className='top-recipes-icon'>
+                    <div style={{
+                        width: '320px',
+                        height: '50vh',
+                        backgroundSize: 'cover',
+                        backgroundImage: `url(${beefImg})`,
+                        borderRadius: '40px',
+                        filter: 'brightness(50%)'
+                    }}></div>
+                    <h1>BEEF</h1>
+                </div>
+                <div className='top-recipes-icon'>
+                    <div style={{
+                        width: '320px',
+                        height: '50vh',
+                        backgroundSize: 'cover',
+                        backgroundImage: `url(${chickenImg})`,
+                        borderRadius: '40px',
+                        filter: 'brightness(50%)'
+                    }}></div>
+                    <h1>CHICKEN</h1>
+                </div>
+                <div className='top-recipes-icon'>
+                    <div style={{
+                        width: '320px',
+                        height: '50vh',
+                        backgroundSize: 'cover',
+                        backgroundImage: `url(${seafoodImg})`,
+                        borderRadius: '40px',
+                        filter: 'brightness(50%)'
+                    }}></div>
+                    <h1>SEAFOOD</h1>
+                </div>
+            </div>
+            <div className='btn-container'>
+                <button 
+                    className='btn'
+                    onClick={play}
+                    >Learn More</button>
+            </div>
+            
         </div>
     </div>
   )
