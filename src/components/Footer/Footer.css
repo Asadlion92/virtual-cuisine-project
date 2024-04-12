@@ -47,7 +47,8 @@
     justify-content: space-around;
     width: 10rem;
     height: 180px;
-    text-align: center;}
+    text-align: center;
+}
 
 .footer-courses {
     display: flex;
@@ -97,4 +98,51 @@
     justify-content: space-between;
     padding-bottom: 40px;
     flex-wrap: wrap;
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.footer-copyright-container {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    padding: 0 40px;
+}
+
+/*CREATE MEDIA QUERY FOR FOOTER AT 1200PX AND AT 750PX*/
+
+@media screen and (max-width: 1200px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-copyright-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .footer-content-container {
+        flex-direction: column;
+    }
+
+    .footer-right-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-browse, .footer-courses, .footer-contact {
+        margin: 20px 0;
+    }
+    
 }

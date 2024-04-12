@@ -3,6 +3,7 @@ import './Footer.css'
 import { BiSolidDish } from 'react-icons/bi'
 import { MdOutlineMail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
+import { FaRegCopyright } from "react-icons/fa6";
 
 function Footer() {
   return (
@@ -45,6 +46,13 @@ function Footer() {
                     </div>
                 </div>
             </div>
+        </div>
+        <div className="footer-copyright-container">
+            <div className='copyright'>
+                <FaRegCopyright />
+                <div className='copyright-content'>Copyright 2024</div>
+            </div>
+            <div>Privacy Policy</div>
         </div>
     </div>
   )
