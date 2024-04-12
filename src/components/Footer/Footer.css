@@ -1,0 +1,100 @@
+.footer-container {
+    background-color: #1C1B1B;
+    color: #FAFAF6;
+}
+
+.footer-container a {
+    text-decoration: none;
+    color: #FAFAF6;
+}
+
+.footer-container a:hover {
+    color: red;
+}
+
+.footer-logo-img {
+    font-size: 60px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    cursor: default;
+    width: 20rem;
+    justify-content: space-between;
+    color: #FAFAF6;
+    padding: 40px;
+}
+
+.footer-text {
+    font-size: 24px;
+}
+
+.footer-left-content {
+    width: 400px;
+    height: 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.footer-browse {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 10rem;
+    height: 180px;
+    text-align: center;}
+
+.footer-courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 14rem;
+    height: 240px;
+    text-align: center;
+}
+
+.email-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+}
+
+.phone-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 180px;
+}
+
+.email, .phone {
+    font-size: 30px;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 18rem;
+    height: 140px;
+    text-align: center;
+}
+
+.footer-right-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-content-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+}

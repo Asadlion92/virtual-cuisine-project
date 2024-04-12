@@ -9,9 +9,6 @@ a {
 
 .header-container a:hover {
     color: black;
-    /* text-decoration: underline;
-    text-underline-offset: 1rem;
-    text-decoration-color: black; */
 }
 
 .logo-img {
