@@ -24,13 +24,6 @@ a {
     padding: 0 40px;
 }
 
-/* .header-right-content {
-    display: flex;
-    justify-content: space-between;
-    width: 28rem;
-    background-color: red;
-} */
-
 .header-right-content ul {
     display: flex;
 }
@@ -81,6 +74,7 @@ a {
     width: 100%;
     background-color: #FAFAF6;
     border-radius: 0.2rem;
+    transition: all 600ms ease-in-out;
 }
 
 @media screen and (max-width: 850px) {
@@ -112,5 +106,20 @@ a {
     .header-right-content ul li {
         width: 100%;
         text-align: center;
+    }
+
+    .menu span.open:first-child {
+        transform: rotate(45deg) translate(10px, 5px);
+        transition: all 600ms ease-in-out;
+    }
+
+    .menu span.open:nth-child(2) {
+        opacity: 0;
+        transition: all 600ms ease-in-out;
+    }
+
+    .menu span.open:last-child {
+        transform: rotate(-45deg) translate(12px, -8px);
+        transition: all 600ms ease-in-out;
     }
 } 

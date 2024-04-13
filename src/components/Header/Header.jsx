@@ -17,9 +17,9 @@ function Header() {
             </Link>
           </div>
           <div className="menu" onClick={() => {setMenuOpen(!menuOpen)}}>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span className={menuOpen ? "open" : ""}></span>
+            <span className={menuOpen ? "open" : ""}></span>
+            <span className={menuOpen ? "open" : ""}></span>
           </div>
           <div className='header-right-content'>
             <ul className={menuOpen ? "open" : ""}>

@@ -4,6 +4,7 @@ import { BiSolidDish } from 'react-icons/bi'
 import { MdOutlineMail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { FaRegCopyright } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -20,10 +21,11 @@ function Footer() {
             <div className="footer-right-content">
                 <div className="footer-browse">
                     <h3>Browse</h3>
-                    <a href="">Courses</a>
-                    <a href="">About Us</a>
-                    <a href="">Recipes</a>
-                    <a href="">Contact Us</a>
+                    <Link to='/'>Home</Link>
+                    <Link to='/courses'>Courses</Link>
+                    <Link to='/about'>About Us</Link>
+                    <Link to='/recipes'>Recipes</Link>
+                    <Link to='/contact'>Contact Us</Link>
                 </div>
                 <div className="footer-courses">
                     <h3>Courses</h3>
