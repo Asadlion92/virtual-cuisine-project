@@ -10,6 +10,7 @@ import beefImg from '../../images/beef.png'
 import chickenImg from '../../images/chicken.png'
 import seafoodImg from '../../images/seafood.png'
 import sound from '../../assets/button-click.wav'
+import { Link } from 'react-router-dom';
 
 function OurServices() {
 
@@ -73,10 +74,13 @@ function OurServices() {
                 </div>
             </div>
             <div className='btn-container'>
-                <button 
-                    className='btn'
-                    onClick={play}
-                    >Learn More</button>
+                <Link to='/courses'>
+                    <button 
+                        className='btn'
+                        onClick={play}>
+                        Learn More
+                    </button>
+                </Link>
             </div>
             
         </div>
@@ -121,10 +125,13 @@ function OurServices() {
                 </div>
             </div>
             <div className='btn-container'>
-                <button 
-                    className='btn'
-                    onClick={play}
-                    >Learn More</button>
+                <Link to='/recipes'>
+                    <button 
+                        className='btn'
+                        onClick={play}>
+                        Learn More
+                    </button>
+                </Link>
             </div>
             
         </div>

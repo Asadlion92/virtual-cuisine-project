@@ -22,7 +22,7 @@ function Header() {
             <span className={menuOpen ? "open" : ""}></span>
           </div>
           <div className='header-right-content'>
-            <ul className={menuOpen ? "open" : ""}>
+            <ul className={menuOpen ? "open" : ""} onClick={() => {setMenuOpen(!menuOpen)}}>
               <li><NavLink to='/courses'>Courses</NavLink></li>
               <li><NavLink to='/about'>About Us</NavLink></li>
               <li><NavLink to='/recipes'>Recipes</NavLink></li>

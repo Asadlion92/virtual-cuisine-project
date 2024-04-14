@@ -2,6 +2,7 @@ import React from 'react'
 import './HeroSlide.css'
 import heroImage from '../../images/hero-image.png'
 import sound from '../../assets/button-click.wav'
+import { Link } from 'react-router-dom'
 
 function HeroSlide() {
 
@@ -21,10 +22,13 @@ function HeroSlide() {
       }}></div>
       <div className='hero-text-container'>
           <h1 className='hero-text'>DISCOVER YOUR PERFECT ONLINE COOKING COURSE</h1>
-          <button 
-            className='heroslide-btn'
-            onClick={play}
-            >Learn More</button>
+          <Link to='/about'>
+            <button 
+              className='heroslide-btn'
+              onClick={play}>
+              Learn More
+            </button>
+          </Link>
       </div>
 
     </div>
