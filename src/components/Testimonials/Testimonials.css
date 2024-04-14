@@ -48,3 +48,13 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+@media screen and (max-width: 450px) {
+
+    .testimonial-icon {
+        width: 320px;
+        height: 800px;
+        margin: 60px 5px;
+    }
+    
+}

@@ -25,7 +25,7 @@ function OurServices() {
             <div className='top-courses-icons-container'>
                 <div className='top-courses-icon'>
                     <div style={{
-                        width: '320px',
+                        width: '300px',
                         height: '50vh',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
@@ -41,7 +41,7 @@ function OurServices() {
                 </div>
                 <div className='top-courses-icon'>
                     <div style={{
-                        width: '320px',
+                        width: '300px',
                         height: '50vh',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
@@ -57,7 +57,7 @@ function OurServices() {
                 </div>
                 <div className='top-courses-icon'>
                     <div style={{
-                        width: '320px',
+                        width: '300px',
                         height: '50vh',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
@@ -85,7 +85,7 @@ function OurServices() {
             <div className='top-recipes-icons-container'>
                 <div className='top-recipes-icon'>
                     <div style={{
-                        width: '320px',
+                        width: '300px',
                         height: '50vh',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
@@ -97,7 +97,7 @@ function OurServices() {
                 </div>
                 <div className='top-recipes-icon'>
                     <div style={{
-                        width: '320px',
+                        width: '300px',
                         height: '50vh',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
@@ -109,7 +109,7 @@ function OurServices() {
                 </div>
                 <div className='top-recipes-icon'>
                     <div style={{
-                        width: '320px',
+                        width: '300px',
                         height: '50vh',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
