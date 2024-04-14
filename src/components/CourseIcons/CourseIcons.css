@@ -11,16 +11,6 @@
     height: auto;
 }
 
-.course-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 40px 20px;
-    text-align: center;
-    position: relative;
-}
-
 .course-icon-header {
     display: flex;
     justify-content: center;
@@ -44,23 +34,6 @@
     margin: 0 10px;
 }
 
-.course-icon p {
-    font-size: 18px;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    width: 60%;
-    transform: translate(-50%, -50%);
-    color: #FAFAF6;
-}
-
-.course-icon a {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .course-icon-btn {
     height: 40px;
     width: 140px;
@@ -82,4 +55,72 @@
     color: red;
     transform: translateY(4px);
     font-size: 18px;
+}
+
+.course-icon-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.course-icon-background {
+    width: 360px;
+    height: 75vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+    filter: brightness(40%);
+}
+
+.course-icon-background-1 {
+    background-image: url(../../images/course-icon1.png);
+}
+
+.course-icon-background-2 {
+    background-image: url(../../images/course-icon2.png);
+}
+
+.course-icon-background-3 {
+    background-image: url(../../images/course-icon3.png);
+}
+
+.course-icon-background-4 {
+    background-image: url(../../images/course-icon4.png);
+}
+
+.course-icon-background-5 {
+    background-image: url(../../images/course-icon5.png);
+}
+
+.course-icon-background-6 {
+    background-image: url(../../images/course-icon6.png);
+}
+
+.course-icon-cover p {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+    color: #FAFAF6;
+}
+
+.course-icon-cover a {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 800px) {
+    .course-icon-background {
+        width: 90vw;
+    }
+    
 }
