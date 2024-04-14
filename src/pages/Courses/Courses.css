@@ -1,0 +1,42 @@
+.courses-container {
+    background-color: #FAFAF6;
+}
+
+.courses-banner-container {
+    position: relative;
+}
+
+.courses-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.courses-text-header {
+    font-size: 40px;
+    text-align: center;
+    color: #FAFAF6;
+    cursor: default;
+}
+
+.courses-sub-header {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+@media screen and (max-width: 400px) {
+
+    .courses-sub-header {
+        padding: 30px 10px;
+    }
+    
+}
