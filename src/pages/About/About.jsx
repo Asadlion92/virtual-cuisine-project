@@ -44,7 +44,7 @@ function About() {
             </div>
             <img src={aboutIcon2} className='offer-icon'/>
           </div>
-          <div className="what-we-offer-item1">
+          <div className="what-we-offer-item2">
             <img src={aboutIcon3} className='offer-icon'/>
             <div className="what-we-offer-content">
               <h3>Recipe Library</h3>
@@ -58,7 +58,7 @@ function About() {
             </div>
             <img src={aboutIcon4} className='offer-icon'/>
           </div>
-          <div className="what-we-offer-item1">
+          <div className="what-we-offer-item2">
             <img src={aboutIcon5} className='offer-icon'/>
             <div className="what-we-offer-content">
               <h3>Personalized Guidance</h3>
