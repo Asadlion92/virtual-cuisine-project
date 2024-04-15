@@ -7,11 +7,13 @@ import Courses from './pages/Courses/Courses'
 import HomePage from './pages/HomePage/HomePage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Recipes from './pages/Recipes/Recipes'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 function App() {
 
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
