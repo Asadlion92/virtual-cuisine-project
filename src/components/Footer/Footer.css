@@ -116,7 +116,6 @@
     padding: 0 40px;
 }
 
-/*CREATE MEDIA QUERY FOR FOOTER AT 1200PX AND AT 750PX*/
 
 @media screen and (max-width: 1200px) {
     .footer-container {
@@ -144,5 +143,15 @@
     .footer-browse, .footer-courses, .footer-contact {
         margin: 20px 0;
     }
-    
+}
+
+@media screen and (max-width: 450px) {
+    .footer-left-content {
+        width: 90vw;
+        height: auto;
+    }
+
+    .footer-left-content h3 {
+        padding: 20px 0;
+    }
 }
