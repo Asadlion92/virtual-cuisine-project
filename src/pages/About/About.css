@@ -63,6 +63,38 @@
     margin: 0 20px 0 10px;
 }
 
+.offer-icon {
+    width: 450px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 80px;
+    margin: 0 20px;
+}
+
+.what-we-offer-content {
+    background-color: red;
+    text-align: center;
+    width: 450px;
+}
+
+.what-we-offer-content h3 {
+    padding: 20px 0;
+    font-size: 24px;
+}
+
+.what-we-offer-content p {
+    font-size: 20px;
+    padding: 0 40px;
+}
+
+.what-we-offer-item1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 80px;
+    background-color: orange;
+}
 
 @media screen and (max-width: 950px) {
     .our-mission-items {
@@ -80,4 +112,15 @@
         margin: 20px 0;
         width: 90vw;
     }
+
+    .what-we-offer-content {
+        margin: 40px 0;
+        width: 90vw;
+    }
+
+    .offer-icon {
+        width: 90vw;
+        height: 50vh;
+    }
+
 }
