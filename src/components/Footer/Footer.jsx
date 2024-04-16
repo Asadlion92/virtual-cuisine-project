@@ -40,7 +40,7 @@ function Footer() {
                     <h3>Contact Us</h3>
                     <div className='email-container'>
                         <MdOutlineMail className='email'/>
-                        <div>virtualcusine@gmail.com</div>
+                        <div>support@virtualcusine.com</div>
                     </div>
                     <div className='phone-container'>
                         <FaPhone className='phone'/>
@@ -54,7 +54,7 @@ function Footer() {
                 <FaRegCopyright />
                 <div className='copyright-content'>Copyright 2024</div>
             </div>
-            <div>Privacy Policy</div>
+            <div className='privacy'>Privacy Policy</div>
         </div>
     </div>
   )
