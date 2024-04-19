@@ -19,11 +19,87 @@ import goatImg from '../../images/goat.png'
 
 function Recipes() {
 
+  //FOR THE CATEGORY SECTION, I CAN DISPLAY THE CATEGORY IMAGES AND STORE THE ASSOICATED API FOR EACH MEAL IN EACH IMAGE WHEN THE USER CLICKS ON THE NAME/IMAGE
+
+  //MAYBE CREATE A COMPONENT FOR EACH RECIPE FILTER SO WHEN THE USER CLICKS THE BUTTON, IT WILL TAKE THEM TO THE COMPONENT
+
   const [categories, setCategories] = useState([])
 
-  const categoryImages = [
-    beefImg, chickenImg, dessertImg, lambImg, miscellaneousImg, pastaImg, porkImg, seafoodImg, sidesImg, starterImg, veganImg, vegatarianImg, breakfastImg, goatImg
+  const newCategory = [
+    {
+      name: 'BEEF',
+      image: beefImg
+    },
+
+    {
+      name: 'CHICKEN',
+      image: chickenImg
+    },
+
+    {
+      name: 'DESSERT',
+      image: dessertImg
+    },
+
+    {
+      name: 'LAMB',
+      image: lambImg
+    },
+
+    {
+      name: 'MISCELLANEOUS',
+      image: miscellaneousImg
+    },
+
+    {
+      name: 'PASTA',
+      image: pastaImg
+    },
+
+    {
+      name: 'PORK',
+      image: porkImg
+    },
+
+    {
+      name: 'SEAFOOD',
+      image: seafoodImg
+    },
+
+    {
+      name: 'SIDES',
+      image: sidesImg
+    },
+
+    {
+      name: 'STARTER',
+      image: starterImg
+    },
+
+    {
+      name: 'VEGAN',
+      image: veganImg
+    },
+
+    {
+      name: 'VEGATARIAN',
+      image: vegatarianImg
+    },
+
+    {
+      name: 'BREAKFAST',
+      image: breakfastImg
+    },
+    
+    {
+      name: 'GOAT',
+      image: goatImg
+    }
+
   ]
+
+
+  //INSTEAD OF AN ARRAY, CREATE AN OBJECT WITH THE NAME AND THE IMAGE
 
   useEffect(()=>{
     axios.get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
@@ -56,28 +132,43 @@ function Recipes() {
         <button>Name</button>
       </div>
       <div className="category-filter-container">
-          {/* {categories?.map((item, index)=><h1 key={index}>{item.strCategory}</h1>)} */}
 
-          {categories?.map((item, index)=>
-        <div key={index} className='top-recipes-icons-container'>
-          <div className='top-recipes-icon'>
-              <div style={{
-                  width: '300px',
-                  height: '50vh',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundImage: `url(${item.strCategoryThumb})`, //NEED TO FIGURE OUT HOW TO MAP THROUGH MY OWN CATEGORY IMAGES DATA
-                  borderRadius: '40px',
-                  filter: 'brightness(50%)'
-              }}></div>
-              <h1>{item.strCategory}</h1>
+        {/* {categories?.map((item, index)=>
+          <div key={index} className='top-recipes-icons-container'>
+            <div className='top-recipes-icon'>
+                <div style={{
+                    width: '300px',
+                    height: '50vh',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundImage: `url(${item.strCategoryThumb})`,
+                    borderRadius: '40px',
+                    filter: 'brightness(50%)'
+                }}></div>
+                <h1>{item.strCategory}</h1>
+            </div>
           </div>
-        </div>
-          )}
+        )} */}
+
+        {newCategory.map((item, index) =>
+          <div key={index} className='recipes-category-icon'>
+            <div style={{
+                width: '300px',
+                height: '50vh',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundImage: `url(${item.image})`,
+                borderRadius: '40px',
+                filter: 'brightness(50%)'
+              }}>
+            </div>
+            <h1>{item.name}</h1>
+          </div>
+        )}
 
 
       </div>
-      {/* <div>{categoryImages.map((item, index)=><img key={index} src={item} />)}</div> */}
+
 
 
     </div>
