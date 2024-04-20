@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './Recipes.css'
 import recipesBanner from '../../images/recipes-banner-idea3.png'
 import axios from 'axios'
@@ -16,99 +16,85 @@ import veganImg from '../../images/vegan.png'
 import vegatarianImg from '../../images/vegatarian.png'
 import breakfastImg from '../../images/breakfast.png'
 import goatImg from '../../images/goat.png'
+import { Link } from 'react-router-dom'
 
 function Recipes() {
 
-  //FOR THE CATEGORY SECTION, I CAN DISPLAY THE CATEGORY IMAGES AND STORE THE ASSOICATED API FOR EACH MEAL IN EACH IMAGE WHEN THE USER CLICKS ON THE NAME/IMAGE
 
   //MAYBE CREATE A COMPONENT FOR EACH RECIPE FILTER SO WHEN THE USER CLICKS THE BUTTON, IT WILL TAKE THEM TO THE COMPONENT
 
-  const [categories, setCategories] = useState([])
-
   const newCategory = [
     {
-      name: 'BEEF',
+      name: 'Beef',
       image: beefImg
     },
 
     {
-      name: 'CHICKEN',
+      name: 'Chicken',
       image: chickenImg
     },
 
     {
-      name: 'DESSERT',
+      name: 'Dessert',
       image: dessertImg
     },
 
     {
-      name: 'LAMB',
+      name: 'Lamb',
       image: lambImg
     },
 
     {
-      name: 'MISCELLANEOUS',
+      name: 'Miscellaneous',
       image: miscellaneousImg
     },
 
     {
-      name: 'PASTA',
+      name: 'Pasta',
       image: pastaImg
     },
 
     {
-      name: 'PORK',
+      name: 'Pork',
       image: porkImg
     },
 
     {
-      name: 'SEAFOOD',
+      name: 'Seafood',
       image: seafoodImg
     },
 
     {
-      name: 'SIDES',
+      name: 'Sides',
       image: sidesImg
     },
 
     {
-      name: 'STARTER',
+      name: 'Starter',
       image: starterImg
     },
 
     {
-      name: 'VEGAN',
+      name: 'Vegan',
       image: veganImg
     },
 
     {
-      name: 'VEGATARIAN',
+      name: 'Vegatarian',
       image: vegatarianImg
     },
 
     {
-      name: 'BREAKFAST',
+      name: 'Breakfast',
       image: breakfastImg
     },
     
     {
-      name: 'GOAT',
+      name: 'Goat',
       image: goatImg
     }
 
   ]
-
-
-  //INSTEAD OF AN ARRAY, CREATE AN OBJECT WITH THE NAME AND THE IMAGE
-
-  useEffect(()=>{
-    axios.get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
-    .then(res=>{
-      console.log(res.data.categories)
-      setCategories(res.data.categories)
-    })
-    .catch(err => console.log(err))
-  }, [])
 
   return (
     <div className='recipes-container'>
@@ -133,23 +119,6 @@ function Recipes() {
       </div>
       <div className="category-filter-container">
 
-        {/* {categories?.map((item, index)=>
-          <div key={index} className='top-recipes-icons-container'>
-            <div className='top-recipes-icon'>
-                <div style={{
-                    width: '300px',
-                    height: '50vh',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundImage: `url(${item.strCategoryThumb})`,
-                    borderRadius: '40px',
-                    filter: 'brightness(50%)'
-                }}></div>
-                <h1>{item.strCategory}</h1>
-            </div>
-          </div>
-        )} */}
-
         {newCategory.map((item, index) =>
           <div key={index} className='recipes-category-icon'>
             <div style={{
@@ -162,7 +131,7 @@ function Recipes() {
                 filter: 'brightness(50%)'
               }}>
             </div>
-            <h1>{item.name}</h1>
+            <h1><Link to={`/category-details/${item.name}`}>{item.name}</Link></h1>
           </div>
         )}
 

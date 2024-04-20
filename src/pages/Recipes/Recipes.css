@@ -72,12 +72,16 @@
     position: relative;
 }
 
-.recipes-category-icon h1 {
+.recipes-category-icon h1 a {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 60%;
     transform: translate(-50%, -50%);
     color: #FAFAF6;
-    cursor: default;
+    text-decoration: none;
+}
+
+.recipes-category-icon h1 a:hover {
+    color: red;
 }

@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage/HomePage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Recipes from './pages/Recipes/Recipes'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import CategoryDetails from './pages/CategoryDetails/CategoryDetails'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/courses' element={<Courses />} />
         <Route path='/recipes' element={<Recipes />} />
+        <Route path='/category-details/:categoryName' element={<CategoryDetails />} />
 
       </Routes>
       <Footer />

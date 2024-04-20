@@ -1,0 +1,21 @@
+.category-banner-container {
+    position: relative;
+}
+
+.category-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.category-text-header {
+    font-size: 40px;
+    text-align: center;
+    /* color: #FAFAF6; */
+    cursor: default;
+}
