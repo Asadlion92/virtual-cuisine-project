@@ -16,6 +16,10 @@
 .category-text-header {
     font-size: 40px;
     text-align: center;
-    /* color: #FAFAF6; */
+    color: #FAFAF6;
     cursor: default;
+}
+
+.category-details-items-container {
+    min-height: 100vh;
 }

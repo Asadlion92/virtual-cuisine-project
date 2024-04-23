@@ -17,9 +17,11 @@ import vegatarianImg from '../../images/vegatarian.png'
 import breakfastImg from '../../images/breakfast.png'
 import goatImg from '../../images/goat.png'
 
+
 function CategoryDetails() {
 
     const {categoryName} = useParams()
+    const {categoryIndex} = useParams()
 
     const [recipe, getRecipe] = useState('')
 
@@ -95,25 +97,6 @@ function CategoryDetails() {
         }
     
       ]
-    
-    const testing = () => {
-
-        let bannerImage = {}
-        for (i = 0; i < newCategory.length; i++) {
-            if (newCategory[i].name === categoryName) {
-                bannerImage = newCategory[i].image
-            }
-            return bannerImage
-          }
-    }
-
-    //   for (i = 0; i < newCategory.length; i++) {
-    //     if (newCategory[i].name === categoryName) {
-    //         return newCategory[i].image
-    //     }
-    //   }
-
-    //HOW DO I GET THE IMAGES FROM MY NEW CATEGORY LIST TO DISPLAY TO EACH BANNER
 
     useEffect(()=>{
         axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`)
@@ -132,12 +115,15 @@ function CategoryDetails() {
                 height: '50vh',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundImage: `url()`,
+                backgroundImage: `url(${newCategory[categoryIndex].image})`,
                 filter: 'brightness(40%)',
             }}></div>
             <div className='category-text-container'>
                 <h1 className='category-text-header'>{categoryName}</h1>
             </div>
+        </div>
+        <div className="category-details-items-container">
+          
         </div>
     </div>
   )

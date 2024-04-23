@@ -131,7 +131,7 @@ function Recipes() {
                 filter: 'brightness(50%)'
               }}>
             </div>
-            <h1><Link to={`/category-details/${item.name}`}>{item.name}</Link></h1>
+            <h1><Link to={`/category-details/${item.name}/${index}`}>{item.name}</Link></h1>
           </div>
         )}
 
