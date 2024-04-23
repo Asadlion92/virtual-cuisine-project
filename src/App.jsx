@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Recipes from './pages/Recipes/Recipes'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import CategoryDetails from './pages/CategoryDetails/CategoryDetails'
+import Details from './components/HeroSlide/Details/Details'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/courses' element={<Courses />} />
         <Route path='/recipes' element={<Recipes />} />
         <Route path='/category-details/:categoryName/:categoryIndex' element={<CategoryDetails />} />
+        <Route path='/details/:mealId' element={<Details />}/>
 
       </Routes>
       <Footer />

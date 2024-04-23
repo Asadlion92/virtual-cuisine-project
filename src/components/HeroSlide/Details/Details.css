@@ -1,0 +1,29 @@
+.details-container {
+    background-color: #FAFAF6;
+}
+
+.details-banner-container {
+    position: relative;
+}
+
+.details-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.details-text-header {
+    font-size: 40px;
+    text-align: center;
+    color: #FAFAF6;
+    cursor: default;
+}
+
+.ingredients-container {
+    min-height: 100vh;
+}

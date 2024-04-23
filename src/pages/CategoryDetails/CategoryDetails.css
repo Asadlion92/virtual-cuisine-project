@@ -14,7 +14,7 @@
 }
 
 .category-text-header {
-    font-size: 40px;
+    font-size: 60px;
     text-align: center;
     color: #FAFAF6;
     cursor: default;
@@ -22,4 +22,40 @@
 
 .category-details-items-container {
     min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.category-details-items-text h2 {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 30px;
+}
+
+.category-details-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.category-details-icon h2 a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    color: #FAFAF6;
+    text-decoration: none;
+}
+
+.category-details-icon h2 a:hover {
+    color: red;
 }

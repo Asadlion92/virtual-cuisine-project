@@ -22,7 +22,7 @@ function Contact() {
       <div className="contact-banner-container">
         <div style={{
             width: '100%',
-            height: '50vh',
+            height: '90vh',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundImage: `url(${contactBanner})`,

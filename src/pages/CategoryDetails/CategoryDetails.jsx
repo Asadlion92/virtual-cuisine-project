@@ -16,6 +16,7 @@ import veganImg from '../../images/vegan.png'
 import vegatarianImg from '../../images/vegatarian.png'
 import breakfastImg from '../../images/breakfast.png'
 import goatImg from '../../images/goat.png'
+import { Link } from 'react-router-dom'
 
 
 function CategoryDetails() {
@@ -23,7 +24,7 @@ function CategoryDetails() {
     const {categoryName} = useParams()
     const {categoryIndex} = useParams()
 
-    const [recipe, getRecipe] = useState('')
+    const [recipe, getRecipe] = useState([])
 
     const newCategory = [
         {
@@ -109,22 +110,39 @@ function CategoryDetails() {
 
   return (
     <div className='category-details-container'>
-        <div className="category-banner-container">
+      <div className="category-banner-container">
+          <div style={{
+              width: '100%',
+              height: '90vh',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundImage: `url(${newCategory[categoryIndex].image})`,
+              filter: 'brightness(40%)',
+          }}></div>
+          <div className='category-text-container'>
+              <h1 className='category-text-header'>{categoryName}</h1>
+          </div>
+      </div>
+      <div className='category-details-items-text'>
+        <h2>{categoryName} Meals</h2>
+      </div>
+      <div className="category-details-items-container">
+          {recipe.map((item, index) =>
+            <div key={index} className='category-details-icon'>
             <div style={{
-                width: '100%',
-                height: '90vh',
+                width: '300px',
+                height: '50vh',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundImage: `url(${newCategory[categoryIndex].image})`,
-                filter: 'brightness(40%)',
-            }}></div>
-            <div className='category-text-container'>
-                <h1 className='category-text-header'>{categoryName}</h1>
+                backgroundImage: `url(${item.strMealThumb})`,
+                borderRadius: '40px',
+                filter: 'brightness(50%)'
+              }}>
             </div>
-        </div>
-        <div className="category-details-items-container">
-          
-        </div>
+            <h2><Link to={`/details/${item.idMeal}`}>{item.strMeal}</Link></h2>
+          </div>
+          )}
+      </div>
     </div>
   )
 }

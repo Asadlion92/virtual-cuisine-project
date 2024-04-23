@@ -14,7 +14,7 @@ function HeroSlide() {
     <div className='heroslide-container'>
       <div style={{
         width: '100%',
-        height: '100vh',
+        height: '90vh',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundImage: `url(${heroImage})`,

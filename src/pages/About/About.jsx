@@ -13,7 +13,7 @@ function About() {
       <div className="about-banner-container">
         <div style={{
             width: '100%',
-            height: '50vh',
+            height: '90vh',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundImage: `url(${aboutBanner})`,
