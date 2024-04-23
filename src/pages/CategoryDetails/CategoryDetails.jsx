@@ -112,7 +112,7 @@ function CategoryDetails() {
         <div className="category-banner-container">
             <div style={{
                 width: '100%',
-                height: '50vh',
+                height: '90vh',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundImage: `url(${newCategory[categoryIndex].image})`,
