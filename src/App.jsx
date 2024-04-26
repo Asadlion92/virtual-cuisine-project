@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Recipes from './pages/Recipes/Recipes'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import CategoryDetails from './pages/CategoryDetails/CategoryDetails'
-import Details from './components/HeroSlide/Details/Details'
+import Details from './components/Details/Details'
 
 function App() {
 
