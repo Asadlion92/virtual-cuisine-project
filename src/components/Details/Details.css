@@ -67,8 +67,16 @@
 }
 
 .instructions-container {
-    min-height: 100vh;
+    height: auto;
     background-color: #EDE9D2;
+}
+
+.instructions-container ol {
+    padding: 40px 80px;
+}
+
+.instructions-container li {
+    font-size: 24px;
 }
 
 @media screen and (max-width: 850px) {

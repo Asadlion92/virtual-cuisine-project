@@ -14,7 +14,17 @@ function Details() {
     const [instructions, setInstructions] = useState('')
 
     const filterArray = (text) => {
-        return text != "";
+        if(text != ("" || null)) {
+            return text
+        }
+    }
+
+    //Some of the instructions already had an ordered list of numbers (Beef Asado instructions), so the code below was created to remove it to prevent duplicates
+
+    const filterInstructions = (text) => {
+        if (Number.isNaN(parseInt(text))) {
+            return text
+        }
     }
 
     const ingredientItems = [
@@ -42,7 +52,9 @@ function Details() {
 
     const newArray = ingredientItems.filter(filterArray)
 
+    const newInstructions = instructions.split(".").slice(0, -1)
 
+    const revisedInstructions = newInstructions.filter(filterInstructions)
 
     useEffect(()=>{
         axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
@@ -82,7 +94,9 @@ function Details() {
         </div>
         <div className='details-title-banner'>INSTRUCTIONS</div>
         <div className="instructions-container">
-            {instructions}
+            <ol>
+                {revisedInstructions.map((item, index) =><li key={index}>{item}</li>)}
+            </ol>
         </div>
     </div>
   )
