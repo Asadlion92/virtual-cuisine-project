@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import './Details.css'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import YouTube from '../YouTube/YouTube'
 
 function Details() {
 
@@ -12,6 +13,7 @@ function Details() {
 
     const [ingredient, setIngredient] = useState('')
     const [instructions, setInstructions] = useState('')
+    const [video, setVideo] = useState('')
 
     const filterArray = (text) => {
         if(text != ("" || null)) {
@@ -64,6 +66,7 @@ function Details() {
         setImage(res.data.meals[0].strMealThumb)
         setBannerTitle(res.data.meals[0].strMeal)
         setInstructions(res.data.meals[0].strInstructions)
+        setVideo(res.data.meals[0].strYoutube)
         })
         .catch(err => console.log(err))
       }, [])
@@ -98,6 +101,7 @@ function Details() {
                 {revisedInstructions.map((item, index) =><li key={index}>{item}</li>)}
             </ol>
         </div>
+        <YouTube recipeVideo = {video}/>
     </div>
   )
 }
