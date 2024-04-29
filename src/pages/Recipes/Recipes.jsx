@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Recipes.css'
 import recipesBanner from '../../images/recipes-banner-idea3.png'
 import axios from 'axios'
@@ -96,6 +96,47 @@ function Recipes() {
 
   ]
 
+  const [categoryFilter, setCategoryFilter] = useState([])
+  const [areaFilter, setAreaFilter] = useState([])
+  const [nameFilter, setNameFilter] = useState([])
+
+
+  const [toggleCategoryFilter, setToggleCategoryFilter] = useState(true)
+  const [toggleAreaFilter, setToggleAreaFilter] = useState(false)
+  const [toggleNameFilter, setToggleNameFilter] = useState(false)
+
+
+
+  //MIGHT NEED TO FIGURE OUT HOW TO TOGGLE BTW CLASSES WHEN THE BTN IS CLICKED
+
+  //When the page loads, this is displayed in the beginning
+
+  useEffect(() => {
+    setCategoryFilter(newCategory)
+  }, [])
+
+
+  const areaFilterButton = () => {
+    setToggleCategoryFilter(false)
+    setToggleAreaFilter(true)
+
+    axios.get(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
+    .then(res=>{
+      console.log(res.data.meals)
+      setAreaFilter(res.data.meals)
+    })
+    .catch(err => console.log(err))
+  }
+
+  const categoryFilterButton = () => {
+    setToggleCategoryFilter(true)
+    setToggleAreaFilter(false)
+  }
+
+  let toggleCategorySection = toggleCategoryFilter ? '' : ' deactive';
+  let toggleAreaSection = toggleAreaFilter ? ' active' : '';
+
+
   return (
     <div className='recipes-container'>
       <div className="recipes-banner-container">
@@ -113,33 +154,38 @@ function Recipes() {
       </div>
       <div className='recipes-title-banner'>Browse a recipe by:</div>
       <div className="filter-buttons-container">
-        <button>Category</button>
-        <button>Area</button>
+        <button onClick={categoryFilterButton}>Category</button>
+        <button onClick={areaFilterButton}>Area</button>
         <button>Name</button>
       </div>
-      <div className="category-filter-container">
+      <div className='filter-container'>
 
-        {newCategory.map((item, index) =>
-          <div key={index} className='recipes-category-icon'>
-            <div style={{
-                width: '300px',
-                height: '50vh',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundImage: `url(${item.image})`,
-                borderRadius: '40px',
-                filter: 'brightness(50%)'
-              }}>
+        <div className={`category-filter-container${toggleCategorySection}`}>
+          {categoryFilter.map((item, index) =>
+            <div key={index} className="recipes-category-icon">
+              <div style={{
+                  width: '300px',
+                  height: '50vh',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundImage: `url(${item.image})`,
+                  borderRadius: '40px',
+                  filter: 'brightness(50%)'
+                }}>
+              </div>
+              <h1><Link to={`/category-details/${item.name}/${index}`}>{item.name}</Link></h1>
             </div>
-            <h1><Link to={`/category-details/${item.name}/${index}`}>{item.name}</Link></h1>
-          </div>
-        )}
+          )}
+        </div>
 
+        <div className={`area-btn-container${toggleAreaSection}`}>
+          {areaFilter.map((item, index) => 
+              <button className='area-btn' key={index}>{item.strArea}</button>
+            )}
+        </div>
 
+        <div>{/*NAME FILTER WILL GO HERE */}</div>
       </div>
-
-
-
     </div>
   )
 }

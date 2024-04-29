@@ -53,6 +53,11 @@
     cursor: pointer;
 }
 
+.filter-buttons-container button:hover {
+    color: black;
+    transition: all 600ms ease-in-out;
+}
+
 .category-filter-container {
     display: flex;
     justify-content: space-around;
@@ -84,4 +89,41 @@
 
 .recipes-category-icon h1 a:hover {
     color: red;
+}
+
+.area-btn {
+    width: 300px;
+    height: 100px;
+    border-radius: 25px;
+    border: 1px solid #B98145;
+    background-color: #FAFAF6;
+    font-size: 30px;
+    color: #B98145;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.area-btn:hover{
+    color: red;
+    transition: all 600ms ease-in-out;
+    border: 3px solid red;
+}
+
+.area-btn-container {
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    display: none;
+    flex-wrap: wrap;
+}
+
+
+.category-filter-container.deactive {
+    display: none;
+}
+
+.area-btn-container.active {
+    display: flex;
+    background-color: #FAFAF6;
+    padding: 40px;
 }
