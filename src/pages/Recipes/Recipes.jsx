@@ -65,7 +65,7 @@ function Recipes() {
     },
 
     {
-      name: 'Sides',
+      name: 'Side',
       image: sidesImg
     },
 
@@ -96,6 +96,14 @@ function Recipes() {
 
   ]
 
+  const firstLetterList = [
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 
+    'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+    'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+  ]
+
+  console.log(firstLetterList)
+
   const [categoryFilter, setCategoryFilter] = useState([])
   const [areaFilter, setAreaFilter] = useState([])
   const [nameFilter, setNameFilter] = useState([])
@@ -119,6 +127,7 @@ function Recipes() {
   const areaFilterButton = () => {
     setToggleCategoryFilter(false)
     setToggleAreaFilter(true)
+    setToggleNameFilter(false)
 
     axios.get(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
     .then(res=>{
@@ -131,10 +140,19 @@ function Recipes() {
   const categoryFilterButton = () => {
     setToggleCategoryFilter(true)
     setToggleAreaFilter(false)
+    setToggleNameFilter(false)
+  }
+
+  const nameFilterButton = () => {
+    setNameFilter(firstLetterList)
+    setToggleNameFilter(true)
+    setToggleCategoryFilter(false)
+    setToggleAreaFilter(false)
   }
 
   let toggleCategorySection = toggleCategoryFilter ? '' : ' deactive';
   let toggleAreaSection = toggleAreaFilter ? ' active' : '';
+  let toggleNameSection = toggleNameFilter ? ' active' : '';
 
 
   return (
@@ -156,7 +174,7 @@ function Recipes() {
       <div className="filter-buttons-container">
         <button onClick={categoryFilterButton}>Category</button>
         <button onClick={areaFilterButton}>Area</button>
-        <button>Name</button>
+        <button onClick={nameFilterButton}>Name</button>
       </div>
       <div className='filter-container'>
 
@@ -184,7 +202,10 @@ function Recipes() {
             )}
         </div>
 
-        <div>{/*NAME FILTER WILL GO HERE */}</div>
+        <div className={`letter-filter-container${toggleNameSection}`}>
+          {nameFilter.map((item, index) =>
+              <button className='name-btn' key={index}>{item}</button>)}
+        </div>
       </div>
     </div>
   )

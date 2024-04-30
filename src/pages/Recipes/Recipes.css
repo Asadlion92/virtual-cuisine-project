@@ -26,17 +26,19 @@
 
 .recipes-title-banner {
     background-color: #FAFAF6;
-    height: 100px;
+    height: auto;
     font-size: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: default;
+    text-align: center;
+    padding: 20px;
 }
 
 .filter-buttons-container {
     background-color: #EDE9D2;
-    height: 100px;
+    height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -51,6 +53,7 @@
     background-color: #B98145;
     color: #FAFAF6;
     cursor: pointer;
+    margin: 20px;
 }
 
 .filter-buttons-container button:hover {
@@ -60,7 +63,7 @@
 
 .category-filter-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: auto;
@@ -101,22 +104,22 @@
     color: #B98145;
     margin: 20px;
     cursor: pointer;
+    box-shadow: 10px 10px 20px gray;
 }
 
 .area-btn:hover{
     color: red;
-    transition: all 600ms ease-in-out;
     border: 3px solid red;
+    transition: all 600ms ease-in-out;
 }
 
 .area-btn-container {
+    display: none;
     justify-content: space-around;
     align-items: center;
     height: auto;
-    display: none;
     flex-wrap: wrap;
 }
-
 
 .category-filter-container.deactive {
     display: none;
@@ -126,4 +129,54 @@
     display: flex;
     background-color: #FAFAF6;
     padding: 40px;
+}
+
+.letter-filter-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.letter-filter-container.active {
+    display: flex;
+    background-color: #FAFAF6;
+    padding: 40px;
+}
+
+.name-btn {
+    width: 70px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid #B98145;
+    background-color: #FAFAF6;
+    font-size: 30px;
+    color: #B98145;
+    margin: 20px;
+    cursor: pointer;
+    box-shadow: 10px 10px 20px gray;
+}
+
+.name-btn:hover {
+    color: red;
+    border: 3px solid red;
+    transition: all 600ms ease-in-out;
+}
+
+@media screen and (max-width: 650px) {
+
+    .filter-buttons-container {
+        flex-direction: column;
+    }
+
+    .filter-buttons-container button {
+        width: 80vw;
+    }
+
+    .recipes-title-banner {
+        font-size: 30px;
+    }
+
+    
 }
