@@ -20,9 +20,6 @@ import { Link } from 'react-router-dom'
 
 function Recipes() {
 
-
-  //MAYBE CREATE A COMPONENT FOR EACH RECIPE FILTER SO WHEN THE USER CLICKS THE BUTTON, IT WILL TAKE THEM TO THE COMPONENT
-
   const newCategory = [
     {
       name: 'Beef',
@@ -98,11 +95,8 @@ function Recipes() {
 
   const firstLetterList = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 
-    'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-    'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+    'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'V', 'W', 'Y'
   ]
-
-  console.log(firstLetterList)
 
   const [categoryFilter, setCategoryFilter] = useState([])
   const [areaFilter, setAreaFilter] = useState([])
@@ -113,9 +107,6 @@ function Recipes() {
   const [toggleAreaFilter, setToggleAreaFilter] = useState(false)
   const [toggleNameFilter, setToggleNameFilter] = useState(false)
 
-
-
-  //MIGHT NEED TO FIGURE OUT HOW TO TOGGLE BTW CLASSES WHEN THE BTN IS CLICKED
 
   //When the page loads, this is displayed in the beginning
 
@@ -131,7 +122,6 @@ function Recipes() {
 
     axios.get(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
     .then(res=>{
-      console.log(res.data.meals)
       setAreaFilter(res.data.meals)
     })
     .catch(err => console.log(err))
@@ -204,7 +194,7 @@ function Recipes() {
 
         <div className={`letter-filter-container${toggleNameSection}`}>
           {nameFilter.map((item, index) =>
-              <button className='name-btn' key={index}>{item}</button>)}
+              <Link to={`/name-details/${item}`}><button className='name-btn' key={index}>{item}</button></Link>)}
         </div>
       </div>
     </div>

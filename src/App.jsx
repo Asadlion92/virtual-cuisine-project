@@ -11,6 +11,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import CategoryDetails from './pages/CategoryDetails/CategoryDetails'
 import Details from './components/Details/Details'
 import AreaDetails from './pages/AreaDetails/AreaDetails'
+import NameDetails from './pages/NameDetails/NameDetails'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/category-details/:categoryName/:categoryIndex' element={<CategoryDetails />} />
         <Route path='/details/:mealId' element={<Details />}/>
         <Route path='/area-details/:areaName' element={<AreaDetails />} />
+        <Route path='/name-details/:firstLetter' element={<NameDetails />} />
 
       </Routes>
       <Footer />

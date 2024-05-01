@@ -9,13 +9,13 @@ function AreaDetails() {
 
     const {areaName} = useParams()
 
-    const [area, getArea] = useState([])
+    const [area, setArea] = useState([])
 
     useEffect(()=>{
         axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${areaName}`)
         .then(res=>{
           console.log(res.data.meals)
-          getArea(res.data.meals)
+          setArea(res.data.meals)
         })
         .catch(err => console.log(err))
       }, [])
