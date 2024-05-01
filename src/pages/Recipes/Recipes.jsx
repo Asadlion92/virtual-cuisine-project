@@ -198,7 +198,7 @@ function Recipes() {
 
         <div className={`area-btn-container${toggleAreaSection}`}>
           {areaFilter.map((item, index) => 
-              <button className='area-btn' key={index}>{item.strArea}</button>
+              <Link to={`/area-details/${item.strArea}`}><button className='area-btn' key={index}>{item.strArea}</button></Link>
             )}
         </div>
 

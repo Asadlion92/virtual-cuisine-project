@@ -10,6 +10,7 @@ import Recipes from './pages/Recipes/Recipes'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import CategoryDetails from './pages/CategoryDetails/CategoryDetails'
 import Details from './components/Details/Details'
+import AreaDetails from './pages/AreaDetails/AreaDetails'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path='/recipes' element={<Recipes />} />
         <Route path='/category-details/:categoryName/:categoryIndex' element={<CategoryDetails />} />
         <Route path='/details/:mealId' element={<Details />}/>
+        <Route path='/area-details/:areaName' element={<AreaDetails />} />
 
       </Routes>
       <Footer />
