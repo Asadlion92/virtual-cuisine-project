@@ -44,8 +44,23 @@
     align-items: center;
 }
 
-.filter-buttons-container button {
+.filter-btn-category {
     font-size: 24px;
+    font-weight: bold;
+    width: 180px;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    background-color: #FAFAF6;
+    color: #B98145;
+    cursor: pointer;
+    margin: 20px;
+    box-shadow: 10px 10px 20px gray;
+}
+
+.filter-btn {
+    font-size: 24px;
+    font-weight: bold;
     width: 180px;
     height: 60px;
     border-radius: 20px;
@@ -54,6 +69,17 @@
     color: #FAFAF6;
     cursor: pointer;
     margin: 20px;
+    box-shadow: 10px 10px 20px gray;
+}
+
+.filter-btn-category.deactive {
+    background-color: #B98145;
+    color: #FAFAF6;
+}
+
+.filter-btn.active {
+    background-color: #FAFAF6;
+    color: #B98145;
 }
 
 .filter-buttons-container button:hover {

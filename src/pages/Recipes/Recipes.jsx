@@ -102,10 +102,13 @@ function Recipes() {
   const [areaFilter, setAreaFilter] = useState([])
   const [nameFilter, setNameFilter] = useState([])
 
-
   const [toggleCategoryFilter, setToggleCategoryFilter] = useState(true)
   const [toggleAreaFilter, setToggleAreaFilter] = useState(false)
   const [toggleNameFilter, setToggleNameFilter] = useState(false)
+
+  const [selectedCategoryBtn, setSelectedCategoryBtn] = useState(true)
+  const [selectedAreaBtn, setSelectedAreaBtn] = useState(false)
+  const [selectedNameBtn, setSelectedNameBtn] = useState(false)
 
 
   //When the page loads, this is displayed in the beginning
@@ -120,6 +123,11 @@ function Recipes() {
     setToggleAreaFilter(true)
     setToggleNameFilter(false)
 
+    setSelectedCategoryBtn(false)
+    setSelectedAreaBtn(true)
+    setSelectedNameBtn(false)
+
+
     axios.get(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
     .then(res=>{
       setAreaFilter(res.data.meals)
@@ -131,6 +139,10 @@ function Recipes() {
     setToggleCategoryFilter(true)
     setToggleAreaFilter(false)
     setToggleNameFilter(false)
+    
+    setSelectedCategoryBtn(true)
+    setSelectedAreaBtn(false)
+    setSelectedNameBtn(false)
   }
 
   const nameFilterButton = () => {
@@ -138,11 +150,20 @@ function Recipes() {
     setToggleNameFilter(true)
     setToggleCategoryFilter(false)
     setToggleAreaFilter(false)
+
+    setSelectedCategoryBtn(false)
+    setSelectedAreaBtn(false)
+    setSelectedNameBtn(true)
   }
 
   let toggleCategorySection = toggleCategoryFilter ? '' : ' deactive';
   let toggleAreaSection = toggleAreaFilter ? ' active' : '';
   let toggleNameSection = toggleNameFilter ? ' active' : '';
+
+  let toggleCategoryBtn = selectedCategoryBtn ? '' : ' deactive'
+  let toggleAreaBtn = selectedAreaBtn ? ' active' : ''
+  let toggleNameBtn = selectedNameBtn ? ' active' : ''
+
 
 
   return (
@@ -162,9 +183,9 @@ function Recipes() {
       </div>
       <div className='recipes-title-banner'>Browse a recipe by:</div>
       <div className="filter-buttons-container">
-        <button onClick={categoryFilterButton}>Category</button>
-        <button onClick={areaFilterButton}>Area</button>
-        <button onClick={nameFilterButton}>Name</button>
+        <button onClick={categoryFilterButton} className={`filter-btn-category${toggleCategoryBtn}`}>Category</button>
+        <button onClick={areaFilterButton} className={`filter-btn${toggleAreaBtn}`}>Area</button>
+        <button onClick={nameFilterButton} className={`filter-btn${toggleNameBtn}`}>Name</button>
       </div>
       <div className='filter-container'>
 
