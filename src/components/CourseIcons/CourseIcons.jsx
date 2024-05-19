@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './CourseIcons.css'
 import { LuChefHat } from "react-icons/lu";
 import { PiCookingPot } from "react-icons/pi";
@@ -8,12 +8,72 @@ import { PiHamburger } from "react-icons/pi";
 import { IoEarthOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import sound from '../../assets/button-click.wav'
+import Modal from 'react-modal'
 
 function CourseIcons() {
 
     const play = () => {
         new Audio(sound).play()
     }
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    const [modalCourses, setModalCourses] = useState([])
+
+    const callBoth = () => {
+        play()
+        setIsOpen(true)
+    }
+
+    const customStyles = {
+      content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        // borderRadius: '25px'
+      },
+    };
+
+    // const courseNames = [`Chef Skills`, `Cooking Essentials`, `Nutrition in Cooking`, `Plant-Based Cooking`, `Teen's Kitchen`, `International Cuisine`]
+
+    const courseNames = [
+        {
+            name: `Chef Skills`,
+            id: 1
+        },
+
+        {
+            name: `Cooking Essentials`,
+            id: 2
+        },
+
+        {
+            name: `Nutrition in Cooking`,
+            id: 3
+        },
+
+        {
+            name: `Plant-Based Cooking`,
+            id: 4
+        },
+
+        {
+            name: `Teen's Kitchen`,
+            id: 5
+        },
+
+        {
+            name: `International Cuisine`,
+            id: 6
+        }
+    ]
+
+    // setModalCourses(courseNames)
+  
+    Modal.setAppElement('#root');
 
   return (
     <div className='courses-icon-container'>
@@ -26,7 +86,7 @@ function CourseIcons() {
                     <LuChefHat className='course-icon-img' />
                 </div>
                 <p>Master the skills and techniques that will take your culinary abilities to the next level and help you excel in the food industry.</p>
-                <Link><button className='course-icon-btn' onClick={play}>Register</button></Link>
+                <Link><button className='course-icon-btn' onClick={callBoth}>Register</button></Link>
             </div>
 
             <div className='course-icon-cover'>
@@ -79,6 +139,55 @@ function CourseIcons() {
                 <Link><button className='course-icon-btn' onClick={play}>Register</button></Link>
             </div>
 
+            <Modal
+                isOpen={isOpen}
+                onRequestClose={() => setIsOpen(false)}
+                style={customStyles}
+                contentLabel="Register"
+            >
+                <div className='modal'>
+                    <h1>Registration Form</h1>
+                    <p>Please fill in the form below</p>
+                    <br />
+                    <div>
+                        <label><h2>Full Name</h2></label>
+                        <div className='fullname'>
+                            <div className='first-name'>
+                                <input type='text' placeholder='Enter your first name' required/>
+                                <h5>First Name</h5>
+                            </div>
+                            <div className='last-name'>
+                                <input type='text' placeholder='Enter your last name' required/>
+                                <h5>Last Name</h5>
+                            </div>
+                        </div>
+                        <br />
+                        <div className='modal-contact-info'>
+                            <div className='modal-email'>
+                                <label><h2>Email</h2></label>
+                                <input type='email' placeholder='Enter your email address' required/>
+                            </div>
+                            <div className='modal-phone'>
+                                <label><h2>Phone Number</h2></label>
+                                <input type='text' placeholder='Enter your phone number' required/>
+                            </div>
+                        </div>
+                        <br />
+                        <div className='modal-dropdown'>
+                            <label><h2>Courses</h2></label>
+                            <select>
+                                <option value="">Select Your Course</option>
+                                {courseNames?.map((item, index)=><option value={item.id} key={index}>{item.name}</option>)}
+                            </select>
+                        </div>
+                        <br />
+                        <div className='modal-btns'>
+                            <button className='cancel-modal'>Cancel</button>
+                            <button className='submit-modal'>Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </Modal>
         </div>
     </div>
   )

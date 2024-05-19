@@ -118,9 +118,93 @@
     transform: translate(-50%, -50%);
 }
 
+.modal {
+    height: 70vh;
+    width: 80vw;
+}
+
+.fullname {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal input {
+    border: 1px solid black;
+    width: 35vw;
+    height: 40px;
+    padding: 0 20px;
+}
+
+.modal-contact-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-dropdown select {
+    border: 1px solid black;
+    width: 80vw;
+    height: 40px;
+    padding: 0 20px;
+}
+
+.modal-btns {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+}
+
+.cancel-modal {
+    background-color: gray;
+    color: #FAFAF6;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    margin-right: 20px;
+    font-weight: bold;
+    height: 40px;
+}
+
+.submit-modal {
+    background-color: dodgerblue;
+    color: #FAFAF6;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    font-weight: bold;
+    height: 40px;
+}
+
+
 @media screen and (max-width: 800px) {
     .course-icon-background {
         width: 90vw;
     }
     
+}
+
+@media screen and (max-width: 500px) {
+    .fullname {
+        flex-direction: column;
+    }
+
+    .modal input {
+        width: 80vw;
+    }
+
+    .modal-contact-info {
+        flex-direction: column;
+    }
+
+    .modal-btns {
+        justify-content: center;
+    }
+
+    .first-name {
+        padding-bottom: 20px;
+    }
+
+    .modal-email {
+        padding-bottom: 20px;
+    }
+
 }
