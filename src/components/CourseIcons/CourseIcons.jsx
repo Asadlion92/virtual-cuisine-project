@@ -9,6 +9,7 @@ import { IoEarthOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import sound from '../../assets/button-click.wav'
 import Modal from 'react-modal'
+import modalBanner from '../../images/modal-background.png'
 
 function CourseIcons() {
 
@@ -17,8 +18,6 @@ function CourseIcons() {
     }
 
     const [isOpen, setIsOpen] = useState(false)
-
-    const [modalCourses, setModalCourses] = useState([])
 
     const callBoth = () => {
         play()
@@ -33,11 +32,11 @@ function CourseIcons() {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        // borderRadius: '25px'
-      },
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundImage: `url(${modalBanner})`,
+      }
     };
-
-    // const courseNames = [`Chef Skills`, `Cooking Essentials`, `Nutrition in Cooking`, `Plant-Based Cooking`, `Teen's Kitchen`, `International Cuisine`]
 
     const courseNames = [
         {
@@ -70,8 +69,6 @@ function CourseIcons() {
             id: 6
         }
     ]
-
-    // setModalCourses(courseNames)
   
     Modal.setAppElement('#root');
 
@@ -96,7 +93,7 @@ function CourseIcons() {
                     <PiCookingPot className='course-icon-img' />
                 </div>
                 <p>Learn the essential skills and techniques that will lead to a lifetime of restaurant-quality cooking.</p>
-                <Link><button className='course-icon-btn' onClick={play}>Register</button></Link>
+                <Link><button className='course-icon-btn' onClick={callBoth}>Register</button></Link>
             </div>
 
             <div className='course-icon-cover'>
@@ -106,7 +103,7 @@ function CourseIcons() {
                     <IoIosNutrition className='course-icon-img' />
                 </div>
                 <p>Master cookery and nutrition skills for health and well-being with this 20-week Accredited Online Nutrition Course.</p>
-                <Link><button className='course-icon-btn' onClick={play}>Register</button></Link>
+                <Link><button className='course-icon-btn' onClick={callBoth}>Register</button></Link>
             </div>
 
             <div className='course-icon-cover'>
@@ -116,7 +113,7 @@ function CourseIcons() {
                     <PiPlant className='course-icon-img' />
                 </div>
                 <p>Learn the skills and techniques that will lead to a lifetime of plant-based and planet-friendly meals.</p>
-                <Link><button className='course-icon-btn' onClick={play}>Register</button></Link>
+                <Link><button className='course-icon-btn' onClick={callBoth}>Register</button></Link>
             </div>
 
             <div className='course-icon-cover'>
@@ -126,7 +123,7 @@ function CourseIcons() {
                     <PiHamburger className='course-icon-img' />
                 </div>
                 <p>Teen's Kitchen is a 6-week immersive and interactive online cookery course and certificate exclusively for young adults aged 13-18.</p>
-                <Link><button className='course-icon-btn' onClick={play}>Register</button></Link>
+                <Link><button className='course-icon-btn' onClick={callBoth}>Register</button></Link>
             </div>
 
             <div className='course-icon-cover'>
@@ -136,7 +133,7 @@ function CourseIcons() {
                     <IoEarthOutline className='course-icon-img' />
                 </div>
                 <p>Students will learn to prepare dishes from various cultures, gaining insight into different ingredients, flavors, and cooking methods.</p>
-                <Link><button className='course-icon-btn' onClick={play}>Register</button></Link>
+                <Link><button className='course-icon-btn' onClick={callBoth}>Register</button></Link>
             </div>
 
             <Modal
@@ -145,47 +142,51 @@ function CourseIcons() {
                 style={customStyles}
                 contentLabel="Register"
             >
+
                 <div className='modal'>
-                    <h1>Registration Form</h1>
-                    <p>Please fill in the form below</p>
-                    <br />
-                    <div>
-                        <label><h2>Full Name</h2></label>
-                        <div className='fullname'>
-                            <div className='first-name'>
-                                <input type='text' placeholder='Enter your first name' required/>
-                                <h5>First Name</h5>
-                            </div>
-                            <div className='last-name'>
-                                <input type='text' placeholder='Enter your last name' required/>
-                                <h5>Last Name</h5>
-                            </div>
-                        </div>
+                    <form>
+                        <h1>Registration Form</h1>
+                        <p>Please fill in the form below</p>
                         <br />
-                        <div className='modal-contact-info'>
-                            <div className='modal-email'>
-                                <label><h2>Email</h2></label>
-                                <input type='email' placeholder='Enter your email address' required/>
+                        <div>
+                            <label><h2>Full Name</h2></label>
+                            <div className='fullname'>
+                                <div className='first-name'>
+                                    <input type='text' placeholder='Enter your first name' required/>
+                                    <h5>First Name</h5>
+                                </div>
+                                <div className='last-name'>
+                                    <input type='text' placeholder='Enter your last name' required/>
+                                    <h5>Last Name</h5>
+                                </div>
                             </div>
-                            <div className='modal-phone'>
-                                <label><h2>Phone Number</h2></label>
-                                <input type='text' placeholder='Enter your phone number' required/>
+                            <br />
+                            <div className='modal-contact-info'>
+                                <div className='modal-email'>
+                                    <label><h2>Email</h2></label>
+                                    <input type='email' placeholder='Enter your email address' required/>
+                                </div>
+                                <div className='modal-phone'>
+                                    <label><h2>Phone Number</h2></label>
+                                    <input type='text' placeholder='Enter your phone number' required/>
+                                </div>
+                            </div>
+                            <br />
+                            <div className='modal-dropdown'>
+                                <label><h2>Courses</h2></label>
+                                <select required>
+                                    <option value="">Select Your Course</option>
+                                    {courseNames?.map((item, index)=><option value={item.id} key={index}>{item.name}</option>)}
+                                </select>
+                            </div>
+                            <br />
+                            <div className='modal-btns'>
+                                <button className='cancel-modal' onClick={() => setIsOpen(false)}>Cancel</button>
+                                <button className='submit-modal'>Submit</button>
                             </div>
                         </div>
-                        <br />
-                        <div className='modal-dropdown'>
-                            <label><h2>Courses</h2></label>
-                            <select>
-                                <option value="">Select Your Course</option>
-                                {courseNames?.map((item, index)=><option value={item.id} key={index}>{item.name}</option>)}
-                            </select>
-                        </div>
-                        <br />
-                        <div className='modal-btns'>
-                            <button className='cancel-modal'>Cancel</button>
-                            <button className='submit-modal'>Submit</button>
-                        </div>
-                    </div>
+                    </form>
+
                 </div>
             </Modal>
         </div>

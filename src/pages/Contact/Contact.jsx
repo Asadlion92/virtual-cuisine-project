@@ -34,7 +34,7 @@ function Contact() {
       </div>
       <div className='contact-title-banner'>GET IN TOUCH</div>
       <div className='contact-items-container'>
-        <form onSubmit={handleSearch}>
+        <form className='contact-form-container' onSubmit={handleSearch}>
           <h2>HAVE QUESTIONS?</h2>
           <br />
           <input className='form-name' type="text" placeholder='Full Name' required />

@@ -43,7 +43,7 @@
     align-items: center;
 }
 
-form {
+.contact-form-container {
     width: 40vw;
     height: auto;
     display: flex;
@@ -145,7 +145,7 @@ textarea {
         display: none;
     }
 
-    form {
+    .contact-form-container {
         width: 100vw;
     }
 
