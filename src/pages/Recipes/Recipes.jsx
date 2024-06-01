@@ -190,7 +190,7 @@ function Recipes() {
       <div className='filter-container'>
 
         <div className={`category-filter-container${toggleCategorySection}`}>
-          {categoryFilter.map((item, index) =>
+          {categoryFilter?.map((item, index) =>
             <div key={index} className="recipes-category-icon">
               <div style={{
                   width: '300px',
@@ -208,13 +208,13 @@ function Recipes() {
         </div>
 
         <div className={`area-btn-container${toggleAreaSection}`}>
-          {areaFilter.map((item, index) => 
+          {areaFilter?.map((item, index) => 
               <Link to={`/area-details/${item.strArea}`}><button className='area-btn' key={index}>{item.strArea}</button></Link>
             )}
         </div>
 
         <div className={`letter-filter-container${toggleNameSection}`}>
-          {nameFilter.map((item, index) =>
+          {nameFilter?.map((item, index) =>
               <Link to={`/name-details/${item}`}><button className='name-btn' key={index}>{item}</button></Link>)}
         </div>
       </div>

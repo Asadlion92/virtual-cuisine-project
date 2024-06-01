@@ -39,7 +39,7 @@ function AreaDetails() {
         <h2>{areaName} Meals</h2>
       </div>
       <div className="category-details-items-container">
-          {area.map((item, index) =>
+          {area?.map((item, index) =>
             <div key={index} className='category-details-icon'>
             <div style={{
                 width: '300px',

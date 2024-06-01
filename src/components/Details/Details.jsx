@@ -90,7 +90,7 @@ function Details() {
             <div className="ingredients">
                 <h2>Ingredients</h2>
                 <ul>
-                    {newArray.map((item, index) =><li key={index}>{item}</li>)}
+                    {newArray?.map((item, index) =><li key={index}>{item}</li>)}
                 </ul>
             </div>
             <img src={image} className='details-image' />
@@ -98,7 +98,7 @@ function Details() {
         <div className='details-title-banner'>INSTRUCTIONS</div>
         <div className="instructions-container">
             <ol>
-                {revisedInstructions.map((item, index) =><li key={index}>{item}</li>)}
+                {revisedInstructions?.map((item, index) =><li key={index}>{item}</li>)}
             </ol>
         </div>
         <YouTube recipeVideo = {video}/>

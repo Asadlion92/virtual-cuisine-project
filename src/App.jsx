@@ -1,17 +1,19 @@
 import './App.css'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
-import About from './pages/About/About'
-import Contact from './pages/Contact/Contact'
-import Courses from './pages/Courses/Courses'
-import HomePage from './pages/HomePage/HomePage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Recipes from './pages/Recipes/Recipes'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
-import CategoryDetails from './pages/CategoryDetails/CategoryDetails'
-import Details from './components/Details/Details'
-import AreaDetails from './pages/AreaDetails/AreaDetails'
-import NameDetails from './pages/NameDetails/NameDetails'
+import { lazy, Suspense } from 'react'
+
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'))
+const About = lazy(() => import('./pages/About/About'))
+const Contact = lazy(() => import('./pages/Contact/Contact'))
+const Courses = lazy(() => import('./pages/Courses/Courses'))
+const Recipes = lazy(() => import('./pages/Recipes/Recipes'))
+const CategoryDetails = lazy(() => import('./pages/CategoryDetails/CategoryDetails'))
+const Details = lazy(() => import('./components/Details/Details'))
+const AreaDetails = lazy(() => import('./pages/AreaDetails/AreaDetails'))
+const NameDetails = lazy(() => import('./pages/NameDetails/NameDetails'))
 
 function App() {
 
@@ -19,18 +21,19 @@ function App() {
     <BrowserRouter>
     <ScrollToTop />
       <Header />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/courses' element={<Courses />} />
-        <Route path='/recipes' element={<Recipes />} />
-        <Route path='/category-details/:categoryName/:categoryIndex' element={<CategoryDetails />} />
-        <Route path='/details/:mealId' element={<Details />}/>
-        <Route path='/area-details/:areaName' element={<AreaDetails />} />
-        <Route path='/name-details/:firstLetter' element={<NameDetails />} />
-
-      </Routes>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/courses' element={<Courses />} />
+          <Route path='/recipes' element={<Recipes />} />
+          <Route path='/category-details/:categoryName/:categoryIndex' element={<CategoryDetails />} />
+          <Route path='/details/:mealId' element={<Details />}/>
+          <Route path='/area-details/:areaName' element={<AreaDetails />} />
+          <Route path='/name-details/:firstLetter' element={<NameDetails />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </BrowserRouter>
   )
