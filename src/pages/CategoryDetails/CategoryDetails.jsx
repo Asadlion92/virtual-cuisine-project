@@ -127,7 +127,7 @@ function CategoryDetails() {
         <h2>{categoryName} Meals</h2>
       </div>
       <div className="category-details-items-container">
-          {recipe.map((item, index) =>
+          {recipe?.map((item, index) =>
             <div key={index} className='category-details-icon'>
             <div style={{
                 width: '300px',

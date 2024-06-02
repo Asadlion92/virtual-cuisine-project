@@ -1,5 +1,16 @@
 .heroslide-container {
+    width: 100%;
+    height: 88vh;
     position: relative;
+}
+
+.testing {
+    width: 100%;
+    height: 88vh;
+    object-fit: cover;
+    filter: brightness(40%);
+    position: absolute;
+    z-index: -1;
 }
 
 .hero-text {
