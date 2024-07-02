@@ -5,6 +5,7 @@ import OurServices from './../../components/OurServices/OurServices';
 import OurMission from '../../components/OurMission/OurMission';
 import Testimonials from '../../components/Testimonials/Testimonials';
 import GetStarted from '../../components/GetStarted/GetStarted';
+import LazyLoadBackground from '../../components/LazyLoadBackground/LazyLoadBackground';
 
 function HomePage() {
   return (
@@ -14,6 +15,7 @@ function HomePage() {
         <OurMission />
         <Testimonials />
         <GetStarted />
+        {/* <LazyLoadBackground /> */}
     </div>
   )
 }

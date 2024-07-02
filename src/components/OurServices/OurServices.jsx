@@ -17,6 +17,8 @@ function OurServices() {
     const play = () => {
         new Audio(sound).play()
     }
+    
+    //NEED TO GET THE SERVICES ICONS TO MIMIC REFORMING ITS SHAPE SIMILAR TO THE TESTIMONIAL ICONS
 
   return (
     <div className='services-container'>

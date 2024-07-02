@@ -1,0 +1,36 @@
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust as needed */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; /* To ensure pseudo-element does not overflow */
+}
+
+.background-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 3s ease-in-out, filter 3s ease-in-out;
+  filter: blur(50px) brightness(0.1); /* Start with a blur and reduced brightness */
+  z-index: -1; /* Ensure the pseudo-element is behind the text */
+}
+
+.background-container.in-view.loaded::before {
+  filter: blur(0) brightness(0.9); /* Adjust brightness after the image has loaded */
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1; /* Ensure text is above the pseudo-element */
+}

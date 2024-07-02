@@ -1,12 +1,21 @@
+.testimonial-banner {
+    position: relative;
+}
+
 .testimonial-title-banner {
     background-color: #B98145;
     color: #FAFAF6;
-    height: 100px;
+    /* height: 100px; */
+    /* height: 15vh; */
+    height: 15vh;
+    width: 100%;
     font-size: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: default;
+    position: relative;
+    z-index: 1;
 }
 
 .testimonial-icon {

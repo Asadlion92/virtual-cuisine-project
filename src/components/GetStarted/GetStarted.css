@@ -1,5 +1,8 @@
 .get-started-container {
     position: relative;
+    width: 100%;
+    height: 100vh;
+    /*MIGHT NEED WIDTH AND HEIGHT HERE. WE WILL SEE.*/
 }
 
 .get-started-text-container {

@@ -15,25 +15,30 @@ function HeroSlide() {
 
   return (
     <div className='heroslide-container'>
+      <div className='heroslide-banner'>
+        <LazyLoadImage
+          className='heroslide-background'
+          effect="blur"
+          src={heroImage}
+          width="100%" //width can be in percentage
+          // height={100} //height cannot be in percentage, just use 100
+          height="100%"
+          //maybe add a placeholder image later
+          placeholderSrc=''
+        />
 
-      <LazyLoadImage
-        className='testing'
-        effect="blur"
-        src={heroImage}
-        width='100%' //width can be in percentage
-        height={100} //height cannot be in percentage, just use 100
-      />
-
-      <div className='hero-text-container'>
-          <h1 className='hero-text'>DISCOVER YOUR PERFECT ONLINE COOKING COURSE</h1>
-          <Link to='/about'>
-            <button 
-              className='heroslide-btn'
-              onClick={play}>
-              Learn More
-            </button>
-          </Link>
+        <div className='hero-text-container'>
+            <h1 className='hero-text'>DISCOVER YOUR PERFECT ONLINE COOKING COURSE</h1>
+            <Link to='/about'>
+              <button 
+                className='heroslide-btn'
+                onClick={play}>
+                Learn More
+              </button>
+            </Link>
+        </div>
       </div>
+
 
     </div>
   )
