@@ -11,14 +11,13 @@ import chickenImg from '../../images/chicken.png'
 import seafoodImg from '../../images/seafood.png'
 import sound from '../../assets/button-click.wav'
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function OurServices() {
 
     const play = () => {
         new Audio(sound).play()
     }
-    
-    //NEED TO GET THE SERVICES ICONS TO MIMIC REFORMING ITS SHAPE SIMILAR TO THE TESTIMONIAL ICONS
 
   return (
     <div className='services-container'>
@@ -27,15 +26,11 @@ function OurServices() {
         <div className='top-courses-container'>
             <div className='top-courses-icons-container'>
                 <div className='top-courses-icon'>
-                    <div style={{
-                        width: '300px',
-                        height: '50vh',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundImage: `url(${courseIconOne})`,
-                        borderRadius: '40px',
-                        filter: 'brightness(40%)'
-                    }}></div>
+                    <LazyLoadImage
+                        className='top-courses-pic'
+                        effect="blur"
+                        src={courseIconOne}
+                    />
                     <div className='top-courses-icon-header'>
                         <h3>Chef Skills</h3>
                         <LuChefHat className='top-courses-img' />
@@ -43,15 +38,11 @@ function OurServices() {
                     <p>Master the skills and techniques that will take your culinary abilities to the next level and help you excel in the food industry.</p>
                 </div>
                 <div className='top-courses-icon'>
-                    <div style={{
-                        width: '300px',
-                        height: '50vh',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundImage: `url(${courseIconTwo})`,
-                        borderRadius: '40px',
-                        filter: 'brightness(40%)'
-                    }}></div>
+                    <LazyLoadImage
+                        className='top-courses-pic'
+                        effect="blur"
+                        src={courseIconTwo}
+                    />
                     <div className='top-courses-icon-header'>
                         <h3>Cooking Essentials</h3>
                         <PiCookingPot className='top-courses-img' />
@@ -59,15 +50,11 @@ function OurServices() {
                     <p>Learn the essential skills and techniques that will lead to a lifetime of restaurant-quality cooking.</p>
                 </div>
                 <div className='top-courses-icon'>
-                    <div style={{
-                        width: '300px',
-                        height: '50vh',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundImage: `url(${courseIconThree})`,
-                        borderRadius: '40px',
-                        filter: 'brightness(40%)'
-                    }}></div>
+                    <LazyLoadImage
+                        className='top-courses-pic'
+                        effect="blur"
+                        src={courseIconThree}
+                    />
                     <div className='top-courses-icon-header'>
                         <h3>Nutrition in Cooking</h3>
                         <IoIosNutrition className='top-courses-img' />
@@ -90,39 +77,27 @@ function OurServices() {
         <div className='top-recipes-container'>
             <div className='top-recipes-icons-container'>
                 <div className='top-recipes-icon'>
-                    <div style={{
-                        width: '300px',
-                        height: '50vh',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundImage: `url(${beefImg})`,
-                        borderRadius: '40px',
-                        filter: 'brightness(50%)'
-                    }}></div>
+                    <LazyLoadImage
+                        className='top-recipes-pic'
+                        effect="blur"
+                        src={beefImg}
+                    />
                     <h1>BEEF</h1>
                 </div>
                 <div className='top-recipes-icon'>
-                    <div style={{
-                        width: '300px',
-                        height: '50vh',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundImage: `url(${chickenImg})`,
-                        borderRadius: '40px',
-                        filter: 'brightness(50%)'
-                    }}></div>
+                    <LazyLoadImage
+                        className='top-recipes-pic'
+                        effect="blur"
+                        src={chickenImg}
+                    />
                     <h1>CHICKEN</h1>
                 </div>
                 <div className='top-recipes-icon'>
-                    <div style={{
-                        width: '300px',
-                        height: '50vh',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundImage: `url(${seafoodImg})`,
-                        borderRadius: '40px',
-                        filter: 'brightness(50%)'
-                    }}></div>
+                    <LazyLoadImage
+                        className='top-recipes-pic'
+                        effect="blur"
+                        src={seafoodImg}
+                    />
                     <h1>SEAFOOD</h1>
                 </div>
             </div>
