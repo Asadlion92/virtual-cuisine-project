@@ -4,6 +4,7 @@ import testimonial1 from '../../images/testimonial-1.png'
 import testimonial2 from '../../images/testimonial-2.png'
 import testimonial3 from '../../images/testimonial-3.png'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function Testimonials() {
   return (

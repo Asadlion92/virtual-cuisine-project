@@ -67,38 +67,13 @@
     position: relative;
 }
 
-.course-icon-background {
+.course-bkgd-pic {
     width: 360px;
     height: 75vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: top;
     border-radius: 40px;
     filter: brightness(40%);
-}
-
-.course-icon-background-1 {
-    background-image: url(../../images/course-icon1.png);
-}
-
-.course-icon-background-2 {
-    background-image: url(../../images/course-icon2.png);
-}
-
-.course-icon-background-3 {
-    background-image: url(../../images/course-icon3.png);
-}
-
-.course-icon-background-4 {
-    background-image: url(../../images/course-icon4.png);
-}
-
-.course-icon-background-5 {
-    background-image: url(../../images/course-icon5.png);
-}
-
-.course-icon-background-6 {
-    background-image: url(../../images/course-icon6.png);
 }
 
 .course-icon-cover p {
@@ -191,6 +166,9 @@
         width: 90vw;
     }
     
+    .course-bkgd-pic {
+        width: 90vw;
+    }
 }
 
 @media screen and (max-width: 650px) {

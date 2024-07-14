@@ -1,9 +1,18 @@
 .courses-container {
-    background-color: #FAFAF6;
+    /* background-color: #FAFAF6; */
 }
 
 .courses-banner-container {
+    width: 100%;
+    height: 100vh;
     position: relative;
+}
+
+.courses-slide-background {
+    object-fit: cover;
+    filter: brightness(40%);
+    position: absolute;
+    z-index: -1;
 }
 
 .courses-text-container {

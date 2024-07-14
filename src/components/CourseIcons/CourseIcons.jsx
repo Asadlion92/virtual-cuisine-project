@@ -10,6 +10,14 @@ import { Link } from 'react-router-dom';
 import sound from '../../assets/button-click.wav'
 import Modal from 'react-modal'
 import modalBanner from '../../images/modal-background.png'
+import courseIconOne from '../../images/course-icon1.png'
+import courseIconTwo from '../../images/course-icon2.png'
+import courseIconThree from '../../images/course-icon3.png'
+import courseIconFour from '../../images/course-icon4.png'
+import courseIconFive from '../../images/course-icon5.png'
+import courseIconSix from '../../images/course-icon6.png'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function CourseIcons() {
 
@@ -77,7 +85,11 @@ function CourseIcons() {
         <div className="all-courses-icon-container">
 
             <div className='course-icon-cover'>
-                <div className='course-icon-background course-icon-background-1'></div>
+                <LazyLoadImage
+                    className='course-bkgd-pic'
+                    effect="blur"
+                    src={courseIconOne}
+                />
                 <div className='course-icon-header'>
                     <h3>Chef Skills</h3>
                     <LuChefHat className='course-icon-img' />
@@ -87,7 +99,11 @@ function CourseIcons() {
             </div>
 
             <div className='course-icon-cover'>
-                <div className='course-icon-background course-icon-background-2'></div>
+                <LazyLoadImage
+                    className='course-bkgd-pic'
+                    effect="blur"
+                    src={courseIconTwo}
+                />
                 <div className='course-icon-header'>
                     <h3>Cooking Essentials</h3>
                     <PiCookingPot className='course-icon-img' />
@@ -97,7 +113,11 @@ function CourseIcons() {
             </div>
 
             <div className='course-icon-cover'>
-                <div className='course-icon-background course-icon-background-3'></div>
+                <LazyLoadImage
+                        className='course-bkgd-pic'
+                        effect="blur"
+                        src={courseIconThree}
+                />
                 <div className='course-icon-header'>
                     <h3>Nutrition in Cooking</h3>
                     <IoIosNutrition className='course-icon-img' />
@@ -107,7 +127,11 @@ function CourseIcons() {
             </div>
 
             <div className='course-icon-cover'>
-                <div className='course-icon-background course-icon-background-4'></div>
+                <LazyLoadImage
+                        className='course-bkgd-pic'
+                        effect="blur"
+                        src={courseIconFour}
+                />
                 <div className='course-icon-header'>
                     <h3>Plant-Based Cooking</h3>
                     <PiPlant className='course-icon-img' />
@@ -117,7 +141,11 @@ function CourseIcons() {
             </div>
 
             <div className='course-icon-cover'>
-                <div className='course-icon-background course-icon-background-5'></div>
+                <LazyLoadImage
+                            className='course-bkgd-pic'
+                            effect="blur"
+                            src={courseIconFive}
+                />
                 <div className='course-icon-header'>
                     <h3>Teen's Kitchen</h3>
                     <PiHamburger className='course-icon-img' />
@@ -127,7 +155,11 @@ function CourseIcons() {
             </div>
 
             <div className='course-icon-cover'>
-                <div className='course-icon-background course-icon-background-6'></div>
+                <LazyLoadImage
+                    className='course-bkgd-pic'
+                    effect="blur"
+                    src={courseIconSix}
+                />
                 <div className='course-icon-header'>
                     <h3>International Cuisine</h3>
                     <IoEarthOutline className='course-icon-img' />
