@@ -21,7 +21,7 @@ function OurServices() {
     }
 
   return (
-    <div className='services-container'>
+    <div>
         <div className='services-title-banner'>OUR SERVICES</div>
         <div className='top-courses-banner'>TOP COURSES</div>
         <div className='top-courses-container'>

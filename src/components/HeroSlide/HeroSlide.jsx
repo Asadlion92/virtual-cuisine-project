@@ -14,7 +14,7 @@ function HeroSlide() {
 
 
   return (
-    <div className='heroslide-container'>
+    <div>
       <div className='heroslide-banner'>
         <LazyLoadImage
           className='heroslide-background'

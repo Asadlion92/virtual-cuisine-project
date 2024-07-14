@@ -14,15 +14,6 @@ function GetStarted() {
 
   return (
     <div className='get-started-container'>
-        {/* <div style={{
-        width: '100%',
-        height: '100vh',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        backgroundImage: `url(${getStarted})`,
-        filter: 'brightness(40%)',
-      }}></div> */}
       <LazyLoadImage
           className='missionslide-background'
           effect="blur"

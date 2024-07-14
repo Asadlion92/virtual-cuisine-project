@@ -169,7 +169,7 @@ function Recipes() {
 
 
   return (
-    <div className='recipes-container'>
+    <div>
       <div className="recipes-banner-container">
         <LazyLoadImage
           className='recipes-slide-background'

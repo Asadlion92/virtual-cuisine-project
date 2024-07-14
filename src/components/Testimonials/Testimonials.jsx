@@ -8,7 +8,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function Testimonials() {
   return (
-    <div className='testimonial-container'>
+    <div>
         <div className='testimonial-title-banner'>TESTIMONIALS</div>
         <div className='testimonial-banner'>
 

@@ -6,7 +6,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function OurMission() {
   return (
-    <div className='mission-container'>
+    <div>
       <div className='mission-title-banner'>OUR MISSION</div>
       <div className='mission-banner'>
 

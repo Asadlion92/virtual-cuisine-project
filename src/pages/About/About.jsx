@@ -11,7 +11,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function About() {
   return (
-    <div className='about-container'>
+    <div>
       <div className="about-banner-container">
           <LazyLoadImage
           className='about-slide-background'
