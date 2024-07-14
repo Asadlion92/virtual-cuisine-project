@@ -5,6 +5,8 @@ import getInTouchPic from '../../images/get-in-touch.png'
 import { MdOutlineMail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import sound from '../../assets/button-click.wav'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function Contact() {
 
@@ -20,14 +22,13 @@ function Contact() {
   return (
     <div className='contact-container'>
       <div className="contact-banner-container">
-        <div style={{
-            width: '100%',
-            height: '90vh',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundImage: `url(${contactBanner})`,
-            filter: 'brightness(40%)',
-          }}></div>
+          <LazyLoadImage
+          className='contact-slide-background'
+          effect="blur"
+          src={contactBanner}
+          width="100%"
+          height="100%"
+          />
         <div className='contact-text-container'>
           <h1 className='contact-text-header'>CONTACT US</h1>
         </div>
@@ -46,7 +47,11 @@ function Contact() {
           <br />
           <input className='form-submit' type="submit" value="Submit" onClick={play} />
         </form>
-        <img src={getInTouchPic} className='contact-pic' />
+        <LazyLoadImage
+          className='contact-pic'
+          effect="blur"
+          src={getInTouchPic}
+          />
       </div>
       <div className="contact-info-container">
         <div className='contact-email-container'>
@@ -58,11 +63,6 @@ function Contact() {
           <div>1-800-555-5555</div>
         </div>
       </div>
-
-
-
-
-
     </div>
   )
 }

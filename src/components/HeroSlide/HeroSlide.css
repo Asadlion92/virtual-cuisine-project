@@ -1,17 +1,14 @@
 .heroslide-container {
-    width: 100%;
-    height: 88vh;
+
 }
 
 .heroslide-banner {
-    /* width: 100%; */
     position: relative;
-    height: 100%;
+    width: 100%;
+    height: 90vh;
 }
 
 .heroslide-background {
-    /* width: 100%; */
-    /* height: 88vh; */
     object-fit: cover;
     filter: brightness(40%);
     position: absolute;

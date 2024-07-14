@@ -17,6 +17,8 @@ import vegatarianImg from '../../images/vegatarian.png'
 import breakfastImg from '../../images/breakfast.png'
 import goatImg from '../../images/goat.png'
 import { Link } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function Recipes() {
 
@@ -169,14 +171,13 @@ function Recipes() {
   return (
     <div className='recipes-container'>
       <div className="recipes-banner-container">
-        <div style={{
-            width: '100%',
-            height: '90vh',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundImage: `url(${recipesBanner})`,
-            filter: 'brightness(40%)',
-          }}></div>
+        <LazyLoadImage
+          className='recipes-slide-background'
+          effect="blur"
+          src={recipesBanner}
+          width="100%"
+          height="100%"
+        />
         <div className='recipes-text-container'>
           <h1 className='recipes-text-header'>RECIPES</h1>
         </div>
@@ -192,16 +193,11 @@ function Recipes() {
         <div className={`category-filter-container${toggleCategorySection}`}>
           {categoryFilter?.map((item, index) =>
             <div key={index} className="recipes-category-icon">
-              <div style={{
-                  width: '300px',
-                  height: '50vh',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundImage: `url(${item.image})`,
-                  borderRadius: '40px',
-                  filter: 'brightness(50%)'
-                }}>
-              </div>
+              <LazyLoadImage
+                    className='recipes-category-icon-bkgd-pic'
+                    effect="blur"
+                    src={item.image}
+                />
               <h1><Link to={`/category-details/${item.name}/${index}`}>{item.name}</Link></h1>
             </div>
           )}
