@@ -3,6 +3,8 @@ import './Details.css'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import YouTube from '../YouTube/YouTube'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function Details() {
 
@@ -74,14 +76,21 @@ function Details() {
   return (
     <div className='details-container'>
         <div className="details-banner-container">
-            <div style={{
+            {/* <div style={{
                 width: '100%',
                 height: '90vh',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundImage: `url(${image})`,
                 filter: 'brightness(40%)',
-            }}></div>
+            }}></div> */}
+            <LazyLoadImage
+                className='details-slide-background'
+                effect="blur"
+                src={image}
+                width="100%"
+                height="100%"
+            />
             <div className='details-text-container'>
             <h1 className='details-text-header'>{bannerTitle}</h1>
             </div>

@@ -17,6 +17,8 @@ import vegatarianImg from '../../images/vegatarian.png'
 import breakfastImg from '../../images/breakfast.png'
 import goatImg from '../../images/goat.png'
 import { Link } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 
 function CategoryDetails() {
@@ -109,19 +111,18 @@ function CategoryDetails() {
       }, [])
 
   return (
-    <div className='category-details-container'>
+    <div>
       <div className="category-banner-container">
-          <div style={{
-              width: '100%',
-              height: '90vh',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundImage: `url(${newCategory[categoryIndex].image})`,
-              filter: 'brightness(40%)',
-          }}></div>
-          <div className='category-text-container'>
-              <h1 className='category-text-header'>{categoryName}</h1>
-          </div>
+        <LazyLoadImage
+          className='category-details-slide-background'
+          effect="blur"
+          src={newCategory[categoryIndex].image}
+          width="100%"
+          height="100%"
+        />
+        <div className='category-text-container'>
+            <h1 className='category-text-header'>{categoryName}</h1>
+        </div>
       </div>
       <div className='category-details-items-text'>
         <h2>{categoryName} Meals</h2>
@@ -129,16 +130,13 @@ function CategoryDetails() {
       <div className="category-details-items-container">
           {recipe?.map((item, index) =>
             <div key={index} className='category-details-icon'>
-            <div style={{
-                width: '300px',
-                height: '50vh',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundImage: `url(${item.strMealThumb})`,
-                borderRadius: '40px',
-                filter: 'brightness(50%)'
-              }}>
-            </div>
+            <LazyLoadImage
+              className='category-details-icon-slide-background'
+              effect="blur"
+              src={item.strMealThumb}
+              width="100%"
+              height="100%"
+            />
             <h2><Link to={`/details/${item.idMeal}`}>{item.strMeal}</Link></h2>
           </div>
           )}
