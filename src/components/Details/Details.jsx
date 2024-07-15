@@ -76,14 +76,6 @@ function Details() {
   return (
     <div className='details-container'>
         <div className="details-banner-container">
-            {/* <div style={{
-                width: '100%',
-                height: '90vh',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundImage: `url(${image})`,
-                filter: 'brightness(40%)',
-            }}></div> */}
             <LazyLoadImage
                 className='details-slide-background'
                 effect="blur"
@@ -102,7 +94,11 @@ function Details() {
                     {newArray?.map((item, index) =><li key={index}>{item}</li>)}
                 </ul>
             </div>
-            <img src={image} className='details-image' />
+            <LazyLoadImage
+                className='details-image'
+                effect="blur"
+                src={image}
+            />
         </div>
         <div className='details-title-banner'>INSTRUCTIONS</div>
         <div className="instructions-container">
