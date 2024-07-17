@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import './AreaDetails.css'
+import '../CategoryDetails/CategoryDetails.css'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import areaBanner from '../../images/area-banner.png'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function AreaDetails() {
 
@@ -21,16 +23,15 @@ function AreaDetails() {
       }, [])
 
   return (
-    <div className='category-details-container'>
+    <div>
       <div className="category-banner-container">
-          <div style={{
-              width: '100%',
-              height: '90vh',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundImage: `url(${areaBanner})`,
-              filter: 'brightness(40%)',
-          }}></div>
+          <LazyLoadImage
+            className='category-details-slide-background'
+            effect="blur"
+            src={areaBanner}
+            width="100%"
+            height="100%"
+          />
           <div className='category-text-container'>
               <h1 className='category-text-header'>{areaName}</h1>
           </div>
@@ -41,16 +42,13 @@ function AreaDetails() {
       <div className="category-details-items-container">
           {area?.map((item, index) =>
             <div key={index} className='category-details-icon'>
-            <div style={{
-                width: '300px',
-                height: '50vh',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundImage: `url(${item.strMealThumb})`,
-                borderRadius: '40px',
-                filter: 'brightness(50%)'
-              }}>
-            </div>
+            <LazyLoadImage
+              className='category-details-icon-slide-background'
+              effect="blur"
+              src={item.strMealThumb}
+              width="100%"
+              height="100%"
+            />
             <h2><Link to={`/details/${item.idMeal}`}>{item.strMeal}</Link></h2>
           </div>
           )}

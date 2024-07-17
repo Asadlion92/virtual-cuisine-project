@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import './NameDetails.css'
+import '../CategoryDetails/CategoryDetails.css'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import firstLetterBanner from '../../images/first-letter-banner.png'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function NameDetails() {
 
@@ -20,43 +22,37 @@ function NameDetails() {
       }, [])
 
   return (
-    <div>
-        <div className='category-details-container'>
-            <div className="category-banner-container">
-                <div style={{
-                    width: '100%',
-                    height: '90vh',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundImage: `url(${firstLetterBanner})`,
-                    filter: 'brightness(40%)',
-                }}></div>
-            <div className='category-text-container'>
-              <h1 className='category-text-header'>Meals beginning with the letter "{firstLetter}"</h1>
+      <div>
+        <div className="category-banner-container">
+          <LazyLoadImage
+            className='category-details-slide-background'
+            effect="blur"
+            src={firstLetterBanner}
+            width="100%"
+            height="100%"
+          />
+          <div className='category-text-container'>
+            <h1 className='category-text-header'>Meals beginning with the letter "{firstLetter}"</h1>
           </div>
-      </div>
-      <div className='category-details-items-text'>
-        <h2>Meals beginning with "{firstLetter}"</h2>
-      </div>
-      <div className="category-details-items-container">
-          {beginningLetter?.map((item, index) =>
-            <div key={index} className='category-details-icon'>
-            <div style={{
-                width: '300px',
-                height: '50vh',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundImage: `url(${item.strMealThumb})`,
-                borderRadius: '40px',
-                filter: 'brightness(50%)'
-              }}>
+        </div>
+        <div className='category-details-items-text'>
+          <h2>Meals beginning with "{firstLetter}"</h2>
+        </div>
+        <div className="category-details-items-container">
+            {beginningLetter?.map((item, index) =>
+              <div key={index} className='category-details-icon'>
+              <LazyLoadImage
+                className='category-details-icon-slide-background'
+                effect="blur"
+                src={item.strMealThumb}
+                width="100%"
+                height="100%"
+              />
+              <h2><Link to={`/details/${item.idMeal}`}>{item.strMeal}</Link></h2>
             </div>
-            <h2><Link to={`/details/${item.idMeal}`}>{item.strMeal}</Link></h2>
-          </div>
-          )}
+            )}
+        </div>
       </div>
-    </div>
-    </div>
   )
 }
 

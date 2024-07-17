@@ -22,8 +22,8 @@ function Footer() {
                 <div className="footer-browse">
                     <h3>Browse</h3>
                     <Link to='/'>Home</Link>
-                    <Link to='/courses'>Courses</Link>
                     <Link to='/about'>About Us</Link>
+                    <Link to='/courses'>Courses</Link>
                     <Link to='/recipes'>Recipes</Link>
                     <Link to='/contact'>Contact Us</Link>
                 </div>
