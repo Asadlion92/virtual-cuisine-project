@@ -19,9 +19,14 @@ import goatImg from '../../images/goat.png'
 import { Link } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import sound from '../../assets/button-click.wav'
 
 
 function CategoryDetails() {
+
+    const play = () => {
+      new Audio(sound).play()
+    }
 
     const {categoryName} = useParams()
     const {categoryIndex} = useParams()
@@ -137,7 +142,7 @@ function CategoryDetails() {
               width="100%"
               height="100%"
             />
-            <h2><Link to={`/details/${item.idMeal}`}>{item.strMeal}</Link></h2>
+            <h2><Link to={`/details/${item.idMeal}`} onClick={play}>{item.strMeal}</Link></h2>
           </div>
           )}
       </div>

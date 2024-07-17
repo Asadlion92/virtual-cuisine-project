@@ -19,8 +19,13 @@ import goatImg from '../../images/goat.png'
 import { Link } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import sound from '../../assets/button-click.wav'
 
 function Recipes() {
+
+  const play = () => {
+    new Audio(sound).play()
+  }
 
   const newCategory = [
     {
@@ -128,6 +133,7 @@ function Recipes() {
     setSelectedCategoryBtn(false)
     setSelectedAreaBtn(true)
     setSelectedNameBtn(false)
+    play()
 
 
     axios.get(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
@@ -145,6 +151,7 @@ function Recipes() {
     setSelectedCategoryBtn(true)
     setSelectedAreaBtn(false)
     setSelectedNameBtn(false)
+    play()
   }
 
   const nameFilterButton = () => {
@@ -156,6 +163,7 @@ function Recipes() {
     setSelectedCategoryBtn(false)
     setSelectedAreaBtn(false)
     setSelectedNameBtn(true)
+    play()
   }
 
   let toggleCategorySection = toggleCategoryFilter ? '' : ' deactive';
@@ -198,20 +206,20 @@ function Recipes() {
                     effect="blur"
                     src={item.image}
                 />
-              <h1><Link to={`/category-details/${item.name}/${index}`}>{item.name}</Link></h1>
+              <h1><Link to={`/category-details/${item.name}/${index}`} onClick={play}>{item.name}</Link></h1>
             </div>
           )}
         </div>
 
         <div className={`area-btn-container${toggleAreaSection}`}>
           {areaFilter?.map((item, index) => 
-              <Link to={`/area-details/${item.strArea}`}><button className='area-btn' key={index}>{item.strArea}</button></Link>
+              <Link to={`/area-details/${item.strArea}`} onClick={play}><button className='area-btn' key={index}>{item.strArea}</button></Link>
             )}
         </div>
 
         <div className={`letter-filter-container${toggleNameSection}`}>
           {nameFilter?.map((item, index) =>
-              <Link to={`/name-details/${item}`}><button className='name-btn' key={index}>{item}</button></Link>)}
+              <Link to={`/name-details/${item}`} onClick={play}><button className='name-btn' key={index}>{item}</button></Link>)}
         </div>
       </div>
     </div>

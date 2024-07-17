@@ -6,8 +6,13 @@ import { Link } from 'react-router-dom'
 import areaBanner from '../../images/area-banner.png'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import sound from '../../assets/button-click.wav'
 
 function AreaDetails() {
+
+  const play = () => {
+    new Audio(sound).play()
+  }
 
     const {areaName} = useParams()
 
@@ -49,7 +54,7 @@ function AreaDetails() {
               width="100%"
               height="100%"
             />
-            <h2><Link to={`/details/${item.idMeal}`}>{item.strMeal}</Link></h2>
+            <h2><Link to={`/details/${item.idMeal}`} onClick={play}>{item.strMeal}</Link></h2>
           </div>
           )}
       </div>
